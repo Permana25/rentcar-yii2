@@ -17,6 +17,12 @@ dmstr\web\AdminLteAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <style type="text/css">
+        .login-page {
+            background-image: url('upload/mobil.jpg');
+            background-size: cover;
+        }
+    </style>
 </head>
 <body class="login-page">
     

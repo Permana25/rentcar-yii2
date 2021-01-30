@@ -85,6 +85,24 @@ $this->title = 'DETAIL TRANSAKSI ' ;
                         return $model->status == 1 ? "<span class='label label-success'>Lunas</span>" : "<span class='label label-warning'>Belum Lunas</span>";
                     }
                 ],
+                [
+                    'attribute' => 'foto mobil',
+                    'format'    => 'raw',
+                    'value'     => function ($model)
+                    {
+                        $foto =$model->mobil->foto;
+                        return "<img src='upload/$foto' width='150'>"; 
+                    }
+                ],
+                [
+                    'attribute' => 'foto customer',
+                    'format'    => 'raw',
+                    'value'     => function ($model)
+                    {
+                        $foto =$model->customer->foto;
+                        return "<img src='upload/$foto' width='150'>"; 
+                    }
+                ],
             ],
         ]) ?>
     </div>

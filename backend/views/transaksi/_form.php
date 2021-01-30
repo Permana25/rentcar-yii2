@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use kartik\date\DatePicker;
+use kartik\datetime\DateTimePicker;
 use kartik\select2\Select2;
 
 /* @var $this yii\web\View */
@@ -41,27 +42,21 @@ use kartik\select2\Select2;
 
 
                 <?=
-                    $form->field($model, 'tgl_pinjam')->widget(DatePicker::classname(), [
-                        'options' => ['placeholder' => 'Masukan Tanggal'],
+                    $form->field($model, 'tgl_pinjam')->widget(DateTimePicker::classname(), [
+                        'options' => ['placeholder' => 'Masukan Tanggal dan Waktu'],
                         'pluginOptions' => [
-                        'todayHighlight' => true ,  
-                        'todayBtn' => true , 
-                        'autoclose'=>true,
-                        'format' => 'yyyy-mm-dd'
+                            'autoclose' => true
                         ]
                     ]);
                 ?>
 
                 <?=
-                    $form->field($model, 'tgl_kembali')->widget(DatePicker::classname(), [
-                        'options' => ['placeholder' => 'Masukan Tanggal'],
-                        'pluginOptions' => [
-                        'todayHighlight' => true ,  
-                        'todayBtn' => true , 
-                        'autoclose'=>true,
-                        'format' => 'yyyy-mm-dd'
-                        ]
-                    ]);
+                 $form->field($model, 'tgl_kembali')->widget(DateTimePicker::classname(), [
+                    'options' => ['placeholder' => 'Masukan Tanggal dan Waktu'],
+                    'pluginOptions' => [
+                        'autoclose' => true
+                    ]
+                ]);
                 ?>
 
                 <?= $form->field($model, 'harga')->textInput() ?>

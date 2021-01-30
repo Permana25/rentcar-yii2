@@ -45,6 +45,17 @@ $this->title = 'DETAIL CUSTOMER';
             ],
             'no_telp',
             'no_ktp',
+            [
+                'attribute' => 'foto',
+                'format'   => 'raw',
+                'label'    => 'foto',
+                'value'    => function ($model)
+                {
+                    return "<img src='upload/$model->foto' width='150'>";
+                
+                }
+
+            ],
             ],
         ]) ?>
     </div>

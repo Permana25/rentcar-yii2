@@ -95,10 +95,10 @@ class TransaksiController extends Controller
         if ($model->load(Yii::$app->request->post()))
          { 
            $mobil= Mobil::find()->where(['id_mobil'=>$model->id_mobil])->one();  
-           $mobil->status=2; 
+           $mobil->status=2;
            $mobil->save(false);
            $model->save();
-            return $this->redirect(['view', 'id' => $model->id_transaksi]);
+           return $this->redirect(['view', 'id' => $model->id_transaksi]);
         }
 
         return $this->renderAjax('create', [

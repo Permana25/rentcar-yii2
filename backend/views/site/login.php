@@ -27,9 +27,9 @@ $fieldOptions2 = [
         </div>
     <!-- /.login-logo -->
 
-    <div class="login-box-body">
+    <div class="login-box-body" style="background:rgba(255,255,255, 0.1)">
 
-        <img src="images/logo.jpg" width="320"><br><br>
+        <img src="upload/logo1.png" width="320"><br><br>
 
 
         <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>

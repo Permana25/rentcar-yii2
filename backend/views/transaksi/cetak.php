@@ -71,8 +71,14 @@
         }
     }
 </style>
-<table class="table1">
+<table class="table1"> 
     <thead>
+        <tr>
+            <td>
+                <th><img src="upload/<?= $model->customer->foto ?>" width='150'></th>
+                <!-- <th><img src="upload/<?= $model->mobil->foto ?>" width='150'></th>            -->
+            </td> 
+        </tr>
         <tr>
             <th colspan="2" class="label1"> IDENTITAS CUSTOMER </th>
         </tr>

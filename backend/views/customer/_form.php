@@ -25,6 +25,8 @@ use yii\widgets\ActiveForm;
 
                 <?= $form->field($model, 'no_ktp')->textInput() ?>
 
+                <?= $form->field($model, 'foto')->fileInput(['maxlength' => true]) ?>
+
                 <div class="form-group">
                     <?= Html::a('<span class="btn-label"><i class="fa fa-arrow-left"></i></span>Kembali',['index'], ['class'=>'btn btn-danger btn-sm waves-effect-light']); ?>
                     <span class="pull-right">

@@ -6,6 +6,9 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use backend\models\LoginForm;
+use backend\models\Transaksi;
+use backend\models\Mobil;
+use backend\models\Customer;
 
 use backend\models\Log;
 /**
@@ -74,7 +77,14 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $transaksi = Transaksi::find()->count();
+        $mobil = Mobil::find()->count();
+        $customer = Customer::find()->count();
+        return $this->render('index',[
+            'transaksi' => $transaksi ?? 0,
+            'mobil' => $mobil ?? 0,
+            'customer' => $customer ?? 0,
+        ]);
     }
 
     /**

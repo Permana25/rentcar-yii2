@@ -50,6 +50,7 @@ class Customer extends \yii\db\ActiveRecord
             'jenis_kelamin' => 'Jenis Kelamin',
             'no_telp' => 'No Telp',
             'no_ktp' => 'No Ktp',
+            'foto' => 'foto',
         ];
     }
 
@@ -61,5 +62,25 @@ class Customer extends \yii\db\ActiveRecord
     public function getTransaksis()
     {
         return $this->hasMany(Transaksi::className(), ['tr_customer' => 'id_customer']);
+    }
+    public function beforeSave($insert)
+    {
+          if (parent::beforeSave($insert)) {
+            if (!empty($this->foto)) {
+                $id_customer = $this->id_customer;
+                $customer = Customer::findOne($id_customer);
+                if($customer->foto ?? '' != $this->foto) {
+                    $filename = time() . "_" . str_replace(" ", "_", $this->foto->baseName) . '.' . $this->foto->extension;
+                    $this->foto->saveAs('upload/' . $filename);
+                    $this->foto = $filename;
+                }
+            } else {
+                    # code...
+                    $id_customer = $this->id_customer;
+                    $penjualan_pengiriman = Mobil::findOne($id_customer);
+                    $this->foto = $penjualan_pengiriman->foto;
+            }
+            return true;
+        }
     }
 }

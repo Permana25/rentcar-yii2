@@ -10,6 +10,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\data\ActiveDataProvider;
 use yii\data\Pagination;
+use yii\web\UploadedFile;
 
 /**
  * CustomerController implements the CRUD actions for Customer model.
@@ -80,7 +81,9 @@ class CustomerController extends Controller
     {
         $model = new Customer();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->foto=UploadedFile::getInstance($model,'foto');
+            $model->save();
             
             Yii::$app->session->setFlash('warning', [['Perhatian!', 'Data berhasil diinput']]);
             return $this->redirect(['view', 'id' => $model->id_customer]);
@@ -102,7 +105,10 @@ class CustomerController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            $model->foto=UploadedFile::getInstance($model,'foto');
+            $model->save();
+
             Yii::$app->session->setFlash('warning', [['Perhatian!', 'Data berhasil disave']]);
             return $this->redirect(['view', 'id' => $model->id_customer]);
         }

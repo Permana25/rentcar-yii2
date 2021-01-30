@@ -64,20 +64,17 @@ class Mobil extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Transaksi::className(), ['tr_mobil' => 'id_mobil']);
     }
+
     public function beforeSave($insert)
     {
-   
           if (parent::beforeSave($insert)) {
-
             if (!empty($this->foto)) {
-
-                $id_mobil = $this->id_mobil;
-                $mobil = Mobil::findOne($id_mobil);
-                if($mobil->foto != $this->foto) {
-                    $filename = time() . "_" . str_replace(" ", "_", $this->foto->baseName) . '.' . $this->foto->extension;
+                if(!empty($this->foto->baseName) ) {
+                    $filename = time() . "_" . str_replace(" ", "_", $this->foto->baseName . '.' . $this->foto->extension);
                     $this->foto->saveAs('upload/' . $filename);
                     $this->foto = $filename;
                 }
+                
             } else {
                     # code...
                     $id_mobil = $this->id_mobil;
