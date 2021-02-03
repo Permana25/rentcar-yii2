@@ -4,14 +4,14 @@
 <link rel="stylesheet" type="text/css" href="css/laporan2.css"/>
 <title>Laporan Transaksi</title></head>
 <body>
-<div class="box">
+<div class="box" width="100%">
 <div style="text-align:center; ">
   <img src="upload/logo1.png" height="100px" width="200px"/><br/>
-    <hr  width="1100px"/>
+    <hr  width="100%"/>
         <img src="upload/<?= $model->customer->foto ?>"height="200" width="300">
-    <hr  width="200px"/>
+    <hr  width="100%"/>
 </div>
-<table align="center" id="transaksi" border='1'>
+<table align="center" id="transaksi" border='1'width="100%">
     <thead>       
         <tr>
             <th colspan="4" class="label1"> IDENTITAS CUSTOMER </th>
@@ -38,8 +38,8 @@
         </tr>
         <tr>
 </table>
-<hr  width="600px"/>
-<table align="center" id="transaksi" border='1'>
+<hr  width="100%"/>
+<table align="center" id="transaksi" border='1' width="100%">
         <th colspan="4" class="label1"> DATA TRANSAKSI </th>
         <tr>
             <td colspan="4" class="">
@@ -189,7 +189,7 @@
         }
     }
     .box {
-        width: 1250px;
+        width: 100%x;
         border-style: ridge;
         padding: 50px;
         text-align : center;
