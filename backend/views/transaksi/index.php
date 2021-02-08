@@ -23,13 +23,13 @@ $this->title = 'Transaksi';
             </span>
         </h4>
     </div>
-    <div class="panel-body">
+    <div class="panel-body"> 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-          
+            'aksi',
             [
                 'attribute' => 'id_customer',
                 'label' => 'Customer',
@@ -51,13 +51,13 @@ $this->title = 'Transaksi';
                   return tanggal_indo($model->tgl_pinjam);
                 }
             ],
-            [
-                'attribute' => 'tgl_kembali',
-                'label' => 'Tanggal Kembali',
-                'value' => function ($model) {
-                   return tanggal_indo($model->tgl_kembali);
-                }
-            ],
+            // [
+                // 'attribute' => 'tgl_kembali',
+                // 'label' => 'Tanggal Kembali',
+                // 'value' => function ($model) {
+                //    return tanggal_indo($model->tgl_kembali);
+                // }
+            // ],
             [
                 'attribute' => 'status',
                 'format'    => 'raw',
