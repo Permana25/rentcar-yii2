@@ -6,8 +6,9 @@
 <body>
 <div class="box" width="100%">
 <div style="text-align:center; ">
-  <img src="upload/logo1.png" height="100px" width="200px"/><br/>
-    <hr  width="100%"/>
+    <p><b><h1 style="font-size:40px">LAPORAN TRANSAKSI</h1></b></p>
+        <img src="upload/logo1.png" height="100px" width="200px"/><br/>
+            <hr  width="100%"/>
         <img src="upload/<?= $model->customer->foto ?>"height="200" width="300">
     <hr  width="100%"/>
 </div>
@@ -40,10 +41,10 @@
 </table>
 <hr  width="100%"/>
 <table align="center" id="transaksi" border='1' width="100%">
-        <th colspan="4" class="label1"> DATA TRANSAKSI </th>
+    <th colspan="4" class="label1"> DATA TRANSAKSI </th>
         <tr>
             <td colspan="4" class="">
-            <table align="center" id="transaksi" border='1'>
+                <table align="center" id="transaksi" border='1'>
                     <thead>
                         <th> Nama Mobil </th>
                         <th> Tanggal Pinjam </th>
@@ -68,11 +69,11 @@
 <br/>
     <b>CEO Rental GSS</b><br/>
         <br/><br/><br/><br/><br/><hr/>
-            .....  
+         <b>   .....   </b>  
 </div>
 <div class="tandatangan2">
     <br/>
-            <?= tanggal_indo($model->tanggal,true) ?><br/><br/><br/><br/>
+            <b><?= tanggal_indo($model->tanggal,true) ?><br/><br/><br/><br/>
     <br/>
 <br/><hr/>
     <?=$model->customer->nama?>  
