@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Feb 2021 pada 03.11
--- Versi server: 10.1.38-MariaDB
--- Versi PHP: 7.3.3
+-- Generation Time: Feb 16, 2021 at 08:30 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `customer`
+-- Table structure for table `customer`
 --
 
 CREATE TABLE `customer` (
@@ -39,7 +39,7 @@ CREATE TABLE `customer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `customer`
+-- Dumping data for table `customer`
 --
 
 INSERT INTO `customer` (`id_customer`, `nama`, `alamat`, `jenis_kelamin`, `no_telp`, `no_ktp`, `foto`) VALUES
@@ -47,12 +47,13 @@ INSERT INTO `customer` (`id_customer`, `nama`, `alamat`, `jenis_kelamin`, `no_te
 (17, 'Jamal', 'Semarang Timur', '1', 2147483647, 2147483647, '1611979386_jamal.jpg'),
 (18, 'Chacha', 'Banyumanik', '2', 2147483647, 2147483647, '1611979465_chacha.jpg'),
 (19, 'Zahra ', 'Jakarta', '2', 2147483647, 2147483647, '1611979609_zahra.jpg'),
-(20, 'Cj', 'Amerika ', '1', 97483757, 2147483647, '1612145731_cj.jpg');
+(20, 'Cj', 'Amerika ', '1', 97483757, 2147483647, '1612145731_cj.jpg'),
+(21, 'Anzas febriyana', 'Cirebon', '1', 2147483647, 2147483647, '1613444913_anzas.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `log`
+-- Table structure for table `log`
 --
 
 CREATE TABLE `log` (
@@ -65,7 +66,7 @@ CREATE TABLE `log` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `log`
+-- Dumping data for table `log`
 --
 
 INSERT INTO `log` (`id`, `level`, `category`, `log_time`, `prefix`, `message`) VALUES
@@ -314,12 +315,22 @@ INSERT INTO `log` (`id`, `level`, `category`, `log_time`, `prefix`, `message`) V
 (0, 0, 'Login', 1612421894.6899, 'admin', 'Login'),
 (0, 4, 'yii\\db\\Command::execute', 1612421894.6899, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1612421894.6899, \'admin\', \'Login\')'),
 (0, 0, 'Login', 1612576439.889, 'admin', 'Login'),
-(0, 4, 'yii\\db\\Command::execute', 1612576439.889, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1612576439.889, \'admin\', \'Login\')');
+(0, 4, 'yii\\db\\Command::execute', 1612576439.889, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1612576439.889, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1612973352.3118, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1612973352.3123, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1612973352.3118, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1613185052.9146, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613185052.9152, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613185052.9146, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1613441432.919, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613441432.9197, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613441432.919, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1613444914.0923, 'admin', 'INSERT INTO `customer` (`nama`, `alamat`, `jenis_kelamin`, `no_telp`, `no_ktp`, `foto`) VALUES (\'Anzas febriyana\', \'Cirebon\', \'1\', 2147483647, 2147483647, \'1613444913_anzas.jpg\')'),
+(0, 4, 'yii\\db\\Command::execute', 1613444996.5784, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=18'),
+(0, 4, 'yii\\db\\Command::execute', 1613444996.728, 'admin', 'INSERT INTO `transaksi` (`id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `harga`, `denda`, `tanggal`, `status`) VALUES (21, 18, \'2021-02-16 10:05\', \'2021-02-17 10:05\', 400000, 0, \'2021-02-16\', 1)'),
+(0, 4, 'yii\\db\\Command::execute', 1613445156.9867, 'admin', 'INSERT INTO `mobil` (`merk`, `no_plat`, `warna`, `tahun`, `status`, `foto`) VALUES (\'Suzuki Karimun Estilo\', \'B 9876 BY\', \'Ungu\', 2017, \'1\', \'1613445156_suzuki.jpg\')');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `login`
+-- Table structure for table `login`
 --
 
 CREATE TABLE `login` (
@@ -331,7 +342,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `login`
+-- Dumping data for table `login`
 --
 
 INSERT INTO `login` (`id_login`, `username`, `password`, `nama`, `foto`) VALUES
@@ -341,7 +352,7 @@ INSERT INTO `login` (`id_login`, `username`, `password`, `nama`, `foto`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `menu_navigasi`
+-- Table structure for table `menu_navigasi`
 --
 
 CREATE TABLE `menu_navigasi` (
@@ -355,7 +366,7 @@ CREATE TABLE `menu_navigasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `menu_navigasi`
+-- Dumping data for table `menu_navigasi`
 --
 
 INSERT INTO `menu_navigasi` (`id_menu`, `nama_menu`, `url`, `id_parent`, `no_urut`, `icon`, `status`) VALUES
@@ -371,7 +382,7 @@ INSERT INTO `menu_navigasi` (`id_menu`, `nama_menu`, `url`, `id_parent`, `no_uru
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `menu_navigasi_role`
+-- Table structure for table `menu_navigasi_role`
 --
 
 CREATE TABLE `menu_navigasi_role` (
@@ -381,7 +392,7 @@ CREATE TABLE `menu_navigasi_role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `menu_navigasi_role`
+-- Dumping data for table `menu_navigasi_role`
 --
 
 INSERT INTO `menu_navigasi_role` (`id_menu_role`, `id_menu`, `id_system_role`) VALUES
@@ -407,7 +418,7 @@ INSERT INTO `menu_navigasi_role` (`id_menu_role`, `id_menu`, `id_system_role`) V
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mobil`
+-- Table structure for table `mobil`
 --
 
 CREATE TABLE `mobil` (
@@ -421,7 +432,7 @@ CREATE TABLE `mobil` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mobil`
+-- Dumping data for table `mobil`
 --
 
 INSERT INTO `mobil` (`id_mobil`, `merk`, `no_plat`, `warna`, `tahun`, `status`, `foto`) VALUES
@@ -431,12 +442,13 @@ INSERT INTO `mobil` (`id_mobil`, `merk`, `no_plat`, `warna`, `tahun`, `status`, 
 (15, 'Toyota Yaris', 'G 9898 TR', 'kuning', 2020, '1', '1611978834_images.jpg'),
 (16, 'Toyota Avanza', 'E 4545 RW', 'Hitam', 2017, '2', '1611979035_Avanza.jpg'),
 (17, 'Daihatsu Ayla', 'K 8976 HB', 'Putih ', 2018, '2', '1611979088_Ayla.jpg'),
-(18, 'Toyota Fortuner', 'Y 7689 BT', 'Coklat', 2019, '1', '1612145787_fortuner.jpg');
+(18, 'Toyota Fortuner', 'Y 7689 BT', 'Coklat', 2019, '2', '1612145787_fortuner.jpg'),
+(19, 'Suzuki Karimun Estilo', 'B 9876 BY', 'Ungu', 2017, '1', '1613445156_suzuki.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `setting`
+-- Table structure for table `setting`
 --
 
 CREATE TABLE `setting` (
@@ -448,7 +460,7 @@ CREATE TABLE `setting` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `system_role`
+-- Table structure for table `system_role`
 --
 
 CREATE TABLE `system_role` (
@@ -457,7 +469,7 @@ CREATE TABLE `system_role` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `system_role`
+-- Dumping data for table `system_role`
 --
 
 INSERT INTO `system_role` (`id_system_role`, `nama_role`) VALUES
@@ -468,7 +480,7 @@ INSERT INTO `system_role` (`id_system_role`, `nama_role`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `transaksi`
+-- Table structure for table `transaksi`
 --
 
 CREATE TABLE `transaksi` (
@@ -484,19 +496,20 @@ CREATE TABLE `transaksi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `transaksi`
+-- Dumping data for table `transaksi`
 --
 
 INSERT INTO `transaksi` (`id_transaksi`, `id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `harga`, `denda`, `tanggal`, `status`) VALUES
 (1, 16, 12, '2021-01-29 14:25:00', '2021-01-30 14:25:00', 150000, 0, '2021-01-29', 1),
 (3, 19, 17, '2021-01-30 11:05:00', '2021-01-31 11:05:00', 400000, 0, '2021-01-30', 1),
 (4, 20, 14, '2021-02-01 09:15:00', '2021-02-02 09:15:00', 250000, 0, '2021-02-01', 1),
-(5, 17, 16, '2021-02-01 09:20:00', '2021-02-02 09:20:00', 150000, 0, '2021-02-01', 1);
+(5, 17, 16, '2021-02-01 09:20:00', '2021-02-02 09:20:00', 150000, 0, '2021-02-01', 1),
+(6, 21, 18, '2021-02-16 10:05:00', '2021-02-17 10:05:00', 400000, 0, '2021-02-16', 1);
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user_role`
+-- Table structure for table `user_role`
 --
 
 CREATE TABLE `user_role` (
@@ -506,7 +519,7 @@ CREATE TABLE `user_role` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `user_role`
+-- Dumping data for table `user_role`
 --
 
 INSERT INTO `user_role` (`id_user_role`, `id_system_role`, `id_login`) VALUES
@@ -538,55 +551,55 @@ INSERT INTO `user_role` (`id_user_role`, `id_system_role`, `id_login`) VALUES
 --
 
 --
--- Indeks untuk tabel `customer`
+-- Indexes for table `customer`
 --
 ALTER TABLE `customer`
   ADD PRIMARY KEY (`id_customer`);
 
 --
--- Indeks untuk tabel `login`
+-- Indexes for table `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`id_login`);
 
 --
--- Indeks untuk tabel `menu_navigasi`
+-- Indexes for table `menu_navigasi`
 --
 ALTER TABLE `menu_navigasi`
   ADD PRIMARY KEY (`id_menu`);
 
 --
--- Indeks untuk tabel `menu_navigasi_role`
+-- Indexes for table `menu_navigasi_role`
 --
 ALTER TABLE `menu_navigasi_role`
   ADD PRIMARY KEY (`id_menu_role`);
 
 --
--- Indeks untuk tabel `mobil`
+-- Indexes for table `mobil`
 --
 ALTER TABLE `mobil`
   ADD PRIMARY KEY (`id_mobil`);
 
 --
--- Indeks untuk tabel `setting`
+-- Indexes for table `setting`
 --
 ALTER TABLE `setting`
   ADD PRIMARY KEY (`id_setting`);
 
 --
--- Indeks untuk tabel `system_role`
+-- Indexes for table `system_role`
 --
 ALTER TABLE `system_role`
   ADD PRIMARY KEY (`id_system_role`);
 
 --
--- Indeks untuk tabel `transaksi`
+-- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
   ADD PRIMARY KEY (`id_transaksi`);
 
 --
--- Indeks untuk tabel `user_role`
+-- Indexes for table `user_role`
 --
 ALTER TABLE `user_role`
   ADD PRIMARY KEY (`id_user_role`),
@@ -594,59 +607,59 @@ ALTER TABLE `user_role`
   ADD KEY `id_login` (`id_login`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `customer`
+-- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id_customer` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_customer` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
--- AUTO_INCREMENT untuk tabel `login`
+-- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
   MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT untuk tabel `menu_navigasi`
+-- AUTO_INCREMENT for table `menu_navigasi`
 --
 ALTER TABLE `menu_navigasi`
   MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
--- AUTO_INCREMENT untuk tabel `menu_navigasi_role`
+-- AUTO_INCREMENT for table `menu_navigasi_role`
 --
 ALTER TABLE `menu_navigasi_role`
   MODIFY `id_menu_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
--- AUTO_INCREMENT untuk tabel `mobil`
+-- AUTO_INCREMENT for table `mobil`
 --
 ALTER TABLE `mobil`
-  MODIFY `id_mobil` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id_mobil` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT untuk tabel `setting`
+-- AUTO_INCREMENT for table `setting`
 --
 ALTER TABLE `setting`
   MODIFY `id_setting` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `system_role`
+-- AUTO_INCREMENT for table `system_role`
 --
 ALTER TABLE `system_role`
   MODIFY `id_system_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT untuk tabel `transaksi`
+-- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_transaksi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT untuk tabel `user_role`
+-- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
   MODIFY `id_user_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
