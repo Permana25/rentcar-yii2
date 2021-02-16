@@ -44,7 +44,7 @@ class MobilController extends Controller
 
         $pages = new Pagination([
             'totalCount' => $query->count(),
-            'pageSize' => 3,
+            'pageSize' => 5,
         ]);
 
         $dataProvider = new ActiveDataProvider([

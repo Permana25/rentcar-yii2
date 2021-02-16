@@ -23,7 +23,6 @@ $this->title = 'DETAIL TRANSAKSI ' ;
                         'method' => 'post',
                     ],
                 ]) ?>
-                    <?= Html::a('<span class="glyphicon glyphicon-print"></span>', ['print-transaksi', 'id' => $model->id_transaksi], ['class' => 'btn btn-primary', 'target' => '_blank']) ?>
             </span>
         </h4>
     </div>
