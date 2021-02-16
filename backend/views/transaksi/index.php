@@ -44,13 +44,13 @@ $this->title = 'Transaksi';
                     return $model->customer->nama;
                 }
             ],
-            // [
-                // 'attribute' => 'id_mobil',
-                // 'label' => 'Mobil',
-                // 'value' => function ($model) {
-                   // return $model->mobil->merk;
-                // }
-            // ],
+            [
+                'attribute' => 'id_mobil',
+                'label' => 'Mobil',
+                'value' => function ($model) {
+                    return $model->mobil->merk;
+                }
+            ],
             [
                 'attribute' => 'tgl_pinjam',
                 'label' => 'Tanggal Pinjam',
