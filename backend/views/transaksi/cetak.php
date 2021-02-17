@@ -13,30 +13,48 @@
     <hr  width="100%"/>
 </div>
 <table align="center" id="transaksi" border='1'width="100%">
-    <thead>       
+    <th colspan="4" class="label1"> IDENTITAS CUSTOMER </th>
         <tr>
-            <th colspan="4" class="label1"> IDENTITAS CUSTOMER </th>
+            <td colspan="4" class="">
+            <table align="center" id="transaksi" border='1'>
         </tr>
-        <tr>
-            <th class="th_samping_gambar"> Nama </th>
-            <td>  <?= $model->customer->nama ?></td>
-        </tr>
-        <tr>
-            <th class="th_samping_gambar"> Alamat </th>
-            <td>  <?= $model->customer->alamat ?></td>
-        </tr>
-        <tr>
-            <th class="th_samping_gambar"> Jenis Kelamin </th>
-            <td>  <?= ($model->customer->jenis_kelamin == 1) ? 'Laki-Laki' : 'Perempuan' ?></td>
-        </tr>
-        <tr>
-            <th class="th_samping_gambar"> No Telp </th>
-            <td>  <?= $model->customer->no_telp ?></td>
-        </tr>
-        <tr>
-            <th class="th_samping_gambar"> No KTP </th>
-            <td>  <?= $model->customer->no_ktp ?></td>
-        </tr>
+        <thead>
+                <th> Nama </th>
+                <th> Alamat </th>
+                <th> Jenis Kelamin</th>
+                <th> No Telp </th>
+                <th> No KTP </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>  <?= $model->customer->nama ?></td>
+                <td>  <?= $model->customer->alamat ?></td>
+                <td>  <?= ($model->customer->jenis_kelamin == 1) ? 'Laki-Laki' : 'Perempuan' ?></td>
+                <td>  <?= $model->customer->no_telp ?></td>
+                <td>  <?= $model->customer->no_ktp ?></td>
+                </tr>
+        </tbody>    
+            
+        <!-- <tr> -->
+            <!-- <th class="th_samping_gambar"> Nama </th> -->
+            <!-- <td>  <?= $model->customer->nama ?></td> -->
+        <!-- </tr> -->
+        <!-- <tr> -->
+            <!-- <th class="th_samping_gambar"> Alamat </th> -->
+            <!-- <td>  <?= $model->customer->alamat ?></td> -->
+        <!-- </tr> -->
+        <!-- <tr> -->
+            <!-- <th class="th_samping_gambar"> Jenis Kelamin </th> -->
+            <!-- <td>  <?= ($model->customer->jenis_kelamin == 1) ? 'Laki-Laki' : 'Perempuan' ?></td> -->
+        <!-- </tr> -->
+        <!-- <tr> -->
+            <!-- <th class="th_samping_gambar"> No Telp </th> -->
+            <!-- <td>  <?= $model->customer->no_telp ?></td> -->
+        <!-- </tr> -->
+        <!-- <tr> -->
+            <!-- <th class="th_samping_gambar"> No KTP </th> -->
+            <!-- <td>  <?= $model->customer->no_ktp ?></td> -->
+        <!-- </tr> -->
         <tr>
 </table>
 <hr  width="100%"/>
@@ -116,7 +134,8 @@
     margin-bottom:-10px;
 }
 .th_samping_gambar{
- Vertical-align: center;
+ /*Vertical-align: center;*/
+ text-align: center;
 }
 .table1 {
         border: 1px solid black;
