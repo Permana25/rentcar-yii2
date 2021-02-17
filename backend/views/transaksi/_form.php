@@ -18,45 +18,44 @@ use kartik\select2\Select2;
 <div class="panel-body">
             <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model, 'id_customer')->widget(Select2::classname(), [
+            <?= $form->field($model,'id_customer')->widget(Select2::classname(), [
                                     'data' => $data_customer,
                                     'language' => 'en',
                                     'options' => ['placeholder' => 'customer'],
                                     'pluginOptions' => [
-                                        'allowClear' => true
+                                    'allowClear' => true
                                     ],
                                     
                                 ])->label('customer')
-                                ?>
-
-                <?= $form->field($model, 'id_mobil')->widget(Select2::classname(), [
+                ?>
+             <?= $form->field($model, 'id_mobil')->widget(Select2::classname(), [
                                     'data' => $data_mobil,
                                     'language' => 'en',
                                     'options' => ['placeholder' => 'mobil'],
                                     'pluginOptions' => [
-                                        'allowClear' => true
+                                    'allowClear' => true
                                     ],
                                     
                                 ])->label('mobil')
-                                ?>
-
-
+                            ?>
                 <?=
                     $form->field($model, 'tgl_pinjam')->widget(DateTimePicker::classname(), [
                         'options' => ['placeholder' => 'Masukan Tanggal dan Waktu'],
                         'pluginOptions' => [
-                            'autoclose' => true
+                        'autoclose' => true,
+                        'format' => 'dd-M-yyyy hh:ii'
                         ]
                     ]);
                 ?>
 
                 <?=
-                 $form->field($model, 'tgl_kembali')->widget(DateTimePicker::classname(), [
-                    'options' => ['placeholder' => 'Masukan Tanggal dan Waktu'],
-                    'pluginOptions' => [
-                        'autoclose' => true
-                    ]
-                ]);
+                    $form->field($model, 'tgl_kembali')->widget(DateTimePicker::classname(), [
+                        'options' => ['placeholder' => 'Masukan Tanggal dan Waktu'],
+                        'pluginOptions' => [
+                        'autoclose' => true,
+                        'format' => 'dd-M-yyyy hh:ii'
+                        ]
+                    ]);
                 ?>
 
                 <?= $form->field($model, 'harga')->textInput() ?>
@@ -70,7 +69,7 @@ use kartik\select2\Select2;
                         'todayHighlight' => true ,  
                         'todayBtn' => true , 
                         'autoclose'=>true,
-                        'format' => 'yyyy-mm-dd'
+                        'format' => 'dd-M-yyyy hh:ii'
                         ]
                     ]);
                 ?>

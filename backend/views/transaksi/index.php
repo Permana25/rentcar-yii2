@@ -55,7 +55,7 @@ $this->title = 'Transaksi';
                 'attribute' => 'tgl_pinjam',
                 'label' => 'Tanggal Pinjam',
                 'value' => function ($model) {
-                  return tanggal_indo($model->tgl_pinjam);
+                  return tanggal_indo($model->tgl_pinjam,true);
                 }
             ],
             // [
