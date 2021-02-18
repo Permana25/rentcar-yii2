@@ -51,6 +51,17 @@ function tanggal_indo($tanggal, $cetak_hari = false)
     return $tgl_indo;
 }
 
+function tanggal_indo2($str)
+{
+    $tr = trim($str);
+    $str = str_replace(
+        array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+        array('Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jum\'at', 'Sabtu', 'Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'),
+        $tr
+    );
+    return $str;
+}
+
 function mysql2phpdatelong($date)
 {
     $mysqldate = strtotime($date);
