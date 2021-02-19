@@ -73,8 +73,8 @@
                     <tbody>
                             <tr>
                                 <td><?= $model->mobil->merk ?></td>
-                                <td><?= tanggal_indo($model->tgl_pinjam, true) ?></td>
-                                <td><?= tanggal_indo($model->tgl_kembali,true) ?></td>
+                                <td><?= tanggal_indo(date('Y-m-d', strtotime($model->tgl_pinjam)), true).' '.date('H:i ', strtotime($model->tgl_pinjam)) ?></td>
+                                <td><?= tanggal_indo(date('Y-m-d', strtotime($model->tgl_kembali)), true).' '.date('H:i ', strtotime($model->tgl_kembali)) ?></td>
                                 <td><?= ribuan($model->harga) ?></td>
                                 <td><?= ($model->status == 1) ? 'Lunas' : 'Belum Lunas' ?></td>
                             </tr>

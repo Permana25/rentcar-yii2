@@ -49,14 +49,14 @@ $this->title = 'DETAIL TRANSAKSI ' ;
                     'attribute' => 'tgl_pinjam',
                     'label' => 'Tanggal Pinjam',
                     'value' => function ($model) {
-                      return tanggal_indo(date('Y-m-d', strtotime($model->tgl_pinjam)), true).' '.date('H:i:s', strtotime($model->tgl_pinjam));
+                      return tanggal_indo(date('Y-m-d', strtotime($model->tgl_pinjam)), true).' '.date('H:i ', strtotime($model->tgl_pinjam));
                     }
                 ],
                 [
                     'attribute' => 'tgl_kembali',
                     'label' => 'Tanggal Kembali',
                     'value' => function ($model) {
-                      return tanggal_indo(date('Y-m-d', strtotime($model->tgl_kembali)), true).' '.date('H:i:s', strtotime($model->tgl_kembali));
+                      return tanggal_indo(date('Y-m-d', strtotime($model->tgl_kembali)), true).' '.date('H:i ', strtotime($model->tgl_kembali));
                     }
                 ],
                 [
@@ -71,7 +71,7 @@ $this->title = 'DETAIL TRANSAKSI ' ;
                     'attribute' => 'tanggal',
                     'label' => 'Tanggal',
                     'value' => function ($model) {
-                      return tanggal_indo(date('Y-m-d', strtotime($model->tanggal)), true).' '.date('H:i:s', strtotime($model->tanggal));
+                      return tanggal_indo($model->tanggal, true);
                     }
                 ],
                 [
