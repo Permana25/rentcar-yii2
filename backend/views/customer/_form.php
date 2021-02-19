@@ -28,7 +28,7 @@ use yii\widgets\ActiveForm;
                 <?= $form->field($model, 'foto')->fileInput(['maxlength' => true]) ?>
 
                 <div class="form-group">
-                    <?= Html::a('<span class="btn-label"><i class="fa fa-arrow-left"></i></span>Kembali',['index'], ['class'=>'btn btn-danger btn-sm waves-effect-light']); ?>
+                    <?= Html::a('<span class="btn-label"><i class="glyphicon glyphicon-arrow-left"></i></span>Kembali',['index'], ['class'=>'btn btn-danger btn-sm waves-effect-light']); ?>
                     <span class="pull-right">
                     <?= Html::submitButton('<span class="glyphicon glyphicon-floppy-saved"></span> Simpan', ['class' => 'btn btn-success']) ?>
                     </span> 

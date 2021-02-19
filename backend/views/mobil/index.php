@@ -14,16 +14,17 @@ if (Yii::$app->user->isGuest) {
  }
 $this->title = 'Mobil';
 ?>
-<div class="mobil-index panel panel-info">
-<div class="panel-heading">
+<div class="mobil-index">
+    <h1><?= Html::encode($this->title) ?></h1>
+        <ul class="breadcrumb">
+        <li><a href="/">Dashboard</a></li>
+        <li class="active"><?= $this->title ?></li>
+    </ul>
         <h4>
-            <?= Html::encode($this->title) ?>
-            <span class="pull-right">
-            <?= Html::button('Tambah Data Mobil', ['value' => Url::to(['create']), 'title' => 'Data Mobil', 'class' => 'showModalButton btn btn-success']); ?>
-            </span>
+            <?= Html::button('<i class="glyphicon glyphicon-plus"></i> Tambah Data', ['value' => Url::to(['create']), 'title' => 'Data Mobil', 'class' => 'showModalButton btn btn-primary']); ?>
         </h4>
-    </div>
-    <div class="panel-body">
+
+            <div class="panel-body">
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -98,5 +99,5 @@ $this->title = 'Mobil';
         //'itemLabelSingle' => 'book',
         //'itemLabelPlural' => 'books'
     ]); ?>
-    </div>
+    </div>  
 </div>
