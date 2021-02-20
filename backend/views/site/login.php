@@ -157,7 +157,7 @@ $fieldOptions2 = [
     <div class="error" data-flashdata="<?= Yii::$app->session->getFlash('error') ?>"></div>
     <div class="login-logo">
         </div>
-            <div class="login-box-body" style="background:rgba(255,255,255, 0.1)">
+            <div class="login-box-body" style="background:rgba(255,255,255, 0.)">
             <div align="center">
                 <div class="row">
                     <div class="col-md-12 formnya" style="margin-left:0px;">
