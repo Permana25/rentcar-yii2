@@ -35,18 +35,6 @@ $this->title = 'Mobil';
             'merk',
             'no_plat',
             'warna',
-            [
-                'attribute' => 'foto',
-                'format'   => 'raw',
-                'label'    => 'Foto',
-                'value'    => function ($model)
-                {
-                    return "<img src='upload/$model->foto' width='150'>";
-                
-                }
-
-            ],
-
             'tahun',
             [
                 'attribute' => 'status',
@@ -57,6 +45,19 @@ $this->title = 'Mobil';
                     return $model->status == 1 ? "<span class='label label-success'>Pesan</span>" : "<span class='label label-warning'>Sudah dipesan</span>";
                 }
             ],
+            
+            // [
+            //     'attribute' => 'foto',
+            //     'format'   => 'raw',
+            //     'label'    => 'Foto',
+            //     'value'    => function ($model)
+            //     {
+            //         return "<img src='upload/$model->foto' width='150'>";
+                
+            //     }
+
+            // ],
+            
 
            
             ['class' => 'yii\grid\ActionColumn'],
