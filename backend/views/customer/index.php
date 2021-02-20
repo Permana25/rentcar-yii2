@@ -17,13 +17,12 @@ $this->title = 'Customer';
 <div class="admin-index">
     <h1><?= Html::encode($this->title) ?></h1>
         <ul class="breadcrumb">
-        <li><a href="/">Dashboard</a></li>
+        <li><a href="index.php">Dashboard</a></li>
         <li class="active"><?= $this->title ?></li>
     </ul>
-        <h4>
+        <p>
             <?= Html::button('<i class="glyphicon glyphicon-plus"></i> Tambah Data', ['value' => Url::to(['create']), 'title' => 'Data Customer', 'class' => 'showModalButton btn btn-primary']); ?>
-        </h4>
-    <div class="panel-body">
+        </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
@@ -96,6 +95,5 @@ $this->title = 'Customer';
         //'itemLabelSingle' => 'book',
         //'itemLabelPlural' => 'books'
     ]); ?>
-    </div>
 </div>   
 

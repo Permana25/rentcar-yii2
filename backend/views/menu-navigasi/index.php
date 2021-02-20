@@ -12,17 +12,16 @@ if (Yii::$app->user->isGuest) {
  }
 $this->title = 'Menu Navigasi';
 ?>
-<div class="menu-navigasi-index panel panel-info">
-<div class="panel-heading">
-        <h4>
-            <?= Html::encode($this->title) ?>
-            <span class="pull-right">
-            <?= Html::a('<span class="glyphicon glyphicon-plus"></span> Tambah Data', ['create'], ['class' => 'btn btn-success btn-sm waves-effect waves-light']) ?>
-            </span>
-        </h4>
-    </div>
-<div class="panel-body">
-<?= GridView::widget([
+<div class="menu-navigasi-index">
+    <h1><?= Html::encode($this->title) ?></h1>
+        <ul class="breadcrumb">
+        <li><a href="index.php">Dashboard</a></li>
+        <li class="active"><?= $this->title ?></li>
+    </ul>
+        <p>
+            <?= Html::a('<span class="glyphicon glyphicon-plus"></span> Tambah Data', ['create'], ['class' => 'btn btn-primary btn-sm waves-effect waves-light']) ?>
+        </p>
+        <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
@@ -44,7 +43,7 @@ $this->title = 'Menu Navigasi';
             ],
 
 
-			
+            
             ['class' => 'yii\grid\ActionColumn'],
         ],
         'containerOptions' => ['style' => 'overflow: auto'], // only set when $responsive = false
@@ -86,4 +85,4 @@ $this->title = 'Menu Navigasi';
         //'itemLabelPlural' => 'books'
     ]); ?>
 </div>
-</div>
+

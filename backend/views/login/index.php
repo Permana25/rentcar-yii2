@@ -14,18 +14,20 @@ if (Yii::$app->user->isGuest) {
 }
 
 $this->title = 'Data Login';
-$this->params['breadcrumbs'][] = $this->title;
+// $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="login-index">
-
     <h1><?= Html::encode($this->title) ?></h1>
-
+        <ul class="breadcrumb">
+        <li><a href="index.php">Dashboard</a></li>
+        <li class="active"><?= $this->title ?></li>
+    </ul>
     <?php // echo $this->render('_search', ['model' => $searchModel]); 
     ?>
 
     <p>
-        <?= Html::a('<span class="glyphicon glyphicon-plus"></span> Tambah Login', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('<span class="glyphicon glyphicon-plus"></span> Tambah Login', ['create'], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?= GridView::widget([
