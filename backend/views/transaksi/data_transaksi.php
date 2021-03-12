@@ -48,12 +48,7 @@
                 <td style="text-transform: uppercase;"><?= tanggal_indo($value->tanggal,true) ?></td>
                 <td style="text-transform: uppercase;"><?= 'Rp.' . ribuan($value->total); ?></td>
                 <td>
-                    <?php if ($value->status == 1) {
-                    echo '<label class="label label-success">Lunas</label>';
-                    } elseif ($value->status == 2) {
-                    echo '<label class="label label-warning">Belum Lunas</label>';
-                        }
-                    ?>
+                    <?= ($value->status == 1) ? 'Lunas' : 'Belum Lunas' ?>
                 </td>
         </tr>
         <?php
