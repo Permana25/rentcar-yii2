@@ -23,10 +23,6 @@ $fieldOptions2 = [
 ];
 ?>
 <style>
-.info a {
-        /* color: rgba(22, 194, 230, 1); */
-        color: black;
-    }
     @import url('https://fonts.googleapis.com/css2?family=Teko:wght@400&display=swap');
 
     ::placeholder {
@@ -78,7 +74,7 @@ $fieldOptions2 = [
     .login-box-body {
         border-radius: 30px;
         /* background: rgb(13, 55, 79); */
-        background: rgba(255, 255, 255, 1);
+        background: rgba(255, 255, 255, 0.1);
         /* background: linear-gradient(329deg, rgba(13, 55, 79, 0.6) 0%, rgba(8, 140, 167, 0.6) 100%);
         padding: 0 !important;
         -webkit-box-shadow: 0px 0px 44px -15px rgba(0, 0, 0, 1);
@@ -155,31 +151,32 @@ $fieldOptions2 = [
 </style>
 <div class="login-box" style="width: 35%;">
     <div class="error" data-flashdata="<?= Yii::$app->session->getFlash('error') ?>"></div>
+    <div class="login-box-body" style="height:100%;">
     <div class="login-logo">
         </div>
-            <div class="login-box-body" style="background:rgba(255,255,255, 0.)">
             <div align="center">
                 <div class="row">
                     <div class="col-md-12 formnya" style="margin-left:0px;">
                         <div class="row" style="left: auto; margin: 10px;">
                             <div class="col-md-1"></div>
                                 <div class="col-md-10" style="margin-top: 0px; margin-bottom: 10px; color: black;">
-                                    <p>WELCOME TO</p>
-                                        <h2 style="color: black; margin-top: 10px;" class="gss"><b>GSS RENTAL</b> 
-                                            <img src="upload/logo1.png" width="200px"><br><br></h2>
-<?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
-        <div class="form-group has-feedback pass field-loginform-username required">
-                                <input type="text" id="loginform-username" class="form-control pass form" name="LoginForm[username]" placeholder="Username" aria-required="true" autofocus>
-                                <!-- <span class='glyphicon glyphicon-user form-control-feedback' style="margin-right: 10px;"></span> -->
-                                <p class="help-block help-block-error"></p>
-                            </div>
-        <div class="form-group has-feedback pass field-loginform-password required">
-                                <input type="password" id="loginform-password" class="form-control pass form" name="LoginForm[password]" placeholder="Password" aria-required="true">
-                                <div id="eye" onclick="eyeSee()">
-                                    <span id="showpwd" class='glyphicon glyphicon-eye-close' style="margin-right: 10px;"></span>
-                                </div>
-                                <p class="help-block help-block-error"></p>
-                            </div>
+                                    <p>SELAMAT DATANG</p>
+                                        <h2 style="color: black; margin-top: 10px;" class="gss"><b>G S S RENTAL</b> 
+                                            <img src="upload/logo1.png" width="80px"><br><br></h2>
+
+                                    <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
+                                            <div class="form-group has-feedback pass field-loginform-username required">
+                                                                    <input type="text" id="loginform-username" class="form-control pass form" name="LoginForm[username]" placeholder="Username" aria-required="true" autofocus>
+                                                                    <!-- <span class='glyphicon glyphicon-user form-control-feedback' style="margin-right: 10px;"></span> -->
+                                                                    <p class="help-block help-block-error"></p>
+                                                                </div>
+                                            <div class="form-group has-feedback pass field-loginform-password required">
+                                                                    <input type="password" id="loginform-password" class="form-control pass form" name="LoginForm[password]" placeholder="Password" aria-required="true">
+                                                                    <div id="eye" onclick="eyeSee()">
+                                                                        <span id="showpwd" class='glyphicon glyphicon-eye-close' style="margin-right: 10px;"></span>
+                                                                    </div>
+                                                                    <p class="help-block help-block-error"></p>
+                                                                </div>
         <!-- <?= $form
             ->field($model, 'username', $fieldOptions1)
             ->label(false)
@@ -192,21 +189,10 @@ $fieldOptions2 = [
    
 
         <div class="form-group">
-            <?= Html::submitButton('LOGIN', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+            <?= Html::submitButton('MASUK', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
         </div>
         <div class="col-md-1"></div>
         <br>
-
-        <div class="row" style="margin-top: -50px;">
-                        <div class="col-lg-12 info">
-                            <p>About Developer</p>
-                            <a href="https://www.facebook.com/garudasaranasejahtera"><i class="fa fa-facebook"></i></a> &nbsp;
-                            <a href="https://www.instagram.com/gss_software/"><i class="fa fa-instagram"></i></a> &nbsp;
-                            <a href="http://klikgss.com"><i class="fa fa-globe"></i></a> &nbsp;
-                            <a href="mailto:informasi@klikgss.com"><i class="fa fa-envelope"></i></a> &nbsp;
-                        </div>
-                    </div>
-
 
         <?php ActiveForm::end(); ?>
 

@@ -13,6 +13,8 @@ use backend\models\Mobil;
 use backend\models\Customer;
 use yii\data\ActiveDataProvider;
 use yii\data\Pagination;
+use mPDF;
+use Mpdf\Mpdf as MpdfMpdf;
 /**
  * TransaksiController implements the CRUD actions for Transaksi model.
  */
@@ -27,7 +29,7 @@ class TransaksiController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['POST', 'GET'],
                 ],
             ],
         ];
@@ -39,24 +41,10 @@ class TransaksiController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new TransaksiSearch();
-        // $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        $query = Transaksi::find();
-
-        $pages = new Pagination([
-            'totalCount' => $query->count(),
-            'pageSize' => 5,
-        ]);
-
-        $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-            'pagination' => $pages,
-        ]);
+        $model = Transaksi::find()->joinWith('customer')->joinWith('mobil')->all();
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'model' => $model,
         ]);
     }
 
@@ -92,12 +80,17 @@ class TransaksiController extends Controller
                 return $customer['nama'];
             }
         );
+        $model->denda=0;
         if ($model->load(Yii::$app->request->post()))
          { 
+
+            
            $mobil= Mobil::find()->where(['id_mobil'=>$model->id_mobil])->one();  
            $mobil->status=2;
+           $model->total=$model->harga+$model->denda;
            $mobil->save(false);
            $model->save();
+            Yii::$app->session->setFlash('success', 'Disimpan');
            return $this->redirect(['view', 'id' => $model->id_transaksi]);
         }
 
@@ -106,8 +99,6 @@ class TransaksiController extends Controller
             'data_mobil' => $data_mobil,
             'data_customer' => $data_customer
         ]);
-
-
     }
 
     /**
@@ -132,6 +123,7 @@ class TransaksiController extends Controller
             }
         );
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            Yii::$app->session->setFlash('success', 'Disimpan');
             return $this->redirect(['view', 'id' => $model->id_transaksi]);
         }
 
@@ -176,11 +168,56 @@ class TransaksiController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
-    public function actionPrintTransaksi($id){
+    public function actionPrintTransaksi($id)
+    {
         $model = $this->findModel($id);
         return $this->renderPartial('cetak', [
             
             'model' => $model,
         ]);
     }
+    //pdf
+    public function actionExportPdf()
+    {
+        $searchModel = new TransaksiSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $html = $this->renderPartial('data_transaksi',['dataProvider'=>$dataProvider]);
+        $mpdf=new \Mpdf\Mpdf();
+        $mpdf->SetDisplayMode('fullpage');
+        $mpdf->list_indent_first_level = 0;  // 1 or 0 - whether to indent the first level of a list
+        $mpdf->WriteHTML($html);
+        $mpdf->Output();
+        exit;
+    }
+   
+    //excel2
+     public function actionExportExcel2()
+    {
+        $searchModel = new TransaksiSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        
+        // Initalize the TBS instance
+        $OpenTBS = new \hscstudio\export\OpenTBS; // new instance of TBS
+        // Change with Your template kaka
+        $template = Yii::getAlias('@hscstudio/export').'/templates/opentbs/dataTransaksi.xlsx';
+        $OpenTBS->LoadTemplate($template); // Also merge some [onload] automatic fields (depends of the type of document).
+        //$OpenTBS->VarRef['modelName']= "Mahasiswa";               
+        $data = [];
+        $no=1;
+        foreach($dataProvider->getModels() as $tra){
+            $data[] = [
+                'no'=>$no++,
+                'nama'=>$tra->customer->nama,
+                'mobil'=>$tra->mobil->merk,
+                'harga'=>$tra->harga,
+                'tanggal'=>$tra->tanggal,
+                'status'=>$tra->status,
+            ];
+        }
+        
+        $OpenTBS->MergeBlock('data', $data);
+        // Output the result as a file on the server. You can change output file
+        $OpenTBS->Show(OPENTBS_DOWNLOAD, 'data_transaksi.xlsx'); // Also merges all [onshow] automatic fields.          
+        exit;
+    } 
 }

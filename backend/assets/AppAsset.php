@@ -12,6 +12,7 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
+        'sweetalert2/dist/sweetalert2.min.css',
         'css/site.css',
         'css/all.min.css',
         'css/tempusdominus-bootstrap-4.min.css',
@@ -22,8 +23,10 @@ class AppAsset extends AssetBundle
         'css/daterangepicker.css',
         'css/summernote-bs4.min.css',
         'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback',
+        'css/dataTables.bootstrap.min.css',
     ];
     public $js = [
+        'sweetalert2/dist/sweetalert2.all.min.js',
         'js/jquery/jquery.min.js',
         'js/jquery-ui.min.js',
         'js/bootstrap.bundle.min.js',
@@ -41,6 +44,9 @@ class AppAsset extends AssetBundle
         'js/dashboard.js',
         'js/ajax-modal-popup.js',
         'js/modal.js',
+        'js/alert.js',
+        'js/jquery.dataTables.min.js',
+        'js/dataTables.min.js',
     ];
     public $depends = [
         'yii\web\YiiAsset',

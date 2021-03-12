@@ -18,7 +18,7 @@ class TransaksiSearch extends Transaksi
     {
         return [
             [['id_transaksi', 'id_customer', 'id_mobil', 'harga', 'denda', 'status'], 'integer'],
-            [['tgl_pinjam', 'tgl_kembali', 'tanggal'], 'safe'],
+            [['tgl_pinjam', 'tgl_kembali', 'tanggal','jam_pinjam','jam_kembali'], 'safe'],
         ];
     }
 

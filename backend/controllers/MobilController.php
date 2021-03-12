@@ -25,7 +25,7 @@ class MobilController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['POST','GET'],
                 ],
             ],
         ];
@@ -52,9 +52,11 @@ class MobilController extends Controller
             'pagination' => $pages,
         ]);
 
+            $model = Mobil::find()->all();
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            // 'searchModel' => $searchModel,
+            // 'dataProvider' => $dataProvider,
+            'model' => $model,
         ]);
     }
 
@@ -83,7 +85,7 @@ class MobilController extends Controller
         if ($model->load(Yii::$app->request->post())) {
             $model->foto=UploadedFile::getInstance($model,'foto');
             $model->save();
-            Yii::$app->session->setFlash('warning', [['Perhatian!', 'Data berhasil diinput']]);
+            Yii::$app->session->setFlash('success', 'Disimpan');
             return $this->redirect(['view', 'id' => $model->id_mobil]);
         }
 
@@ -106,7 +108,7 @@ class MobilController extends Controller
         if ($model->load(Yii::$app->request->post())) { 
             $model->foto=UploadedFile::getInstance($model,'foto');
             $model->save();
-            Yii::$app->session->setFlash('warning', [['Perhatian!', 'Data berhasil disave']]);
+            Yii::$app->session->setFlash('success', 'Disimpan');
             return $this->redirect(['view', 'id' => $model->id_mobil]);
         }
 

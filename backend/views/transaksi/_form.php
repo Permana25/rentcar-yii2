@@ -5,6 +5,8 @@ use yii\widgets\ActiveForm;
 use kartik\date\DatePicker;
 use kartik\datetime\DateTimePicker;
 use kartik\select2\Select2;
+use kartik\time\TimePicker;
+use yii\widgets\MaskedInput;
 
 /* @var $this yii\web\View */
 /* @var $model backend\models\Transaksi */
@@ -12,78 +14,103 @@ use kartik\select2\Select2;
 ?>
 
 <div class="transaksi-form">
-<div class="panel panel-info">
-        <div class="panel-heading">
-        </div>
-<div class="panel-body">
+<div class="box box-primary">
+    <div class="box-header">
+        <div class="box-body" style="overflow-x: auto;">
             <?php $form = ActiveForm::begin(); ?>
 
-            <?= $form->field($model,'id_customer')->widget(Select2::classname(), [
-                                    'data' => $data_customer,
-                                    'language' => 'en',
-                                    'options' => ['placeholder' => 'customer'],
-                                    'pluginOptions' => [
-                                    'allowClear' => true
-                                    ],
+            <div class="row">
+                <div class="col-md-6">
+                    <?= $form->field($model,'id_customer')->widget(Select2::classname(), [
+                    'data' => $data_customer,
+                    'language' => 'en',
+                    'options' => ['placeholder' => 'customer'],
+                    'pluginOptions' => [
+                    'allowClear' => true
+                        ],
                                     
-                                ])->label('customer')
-                ?>
-             <?= $form->field($model, 'id_mobil')->widget(Select2::classname(), [
-                                    'data' => $data_mobil,
-                                    'language' => 'en',
-                                    'options' => ['placeholder' => 'mobil'],
-                                    'pluginOptions' => [
-                                    'allowClear' => true
-                                    ],
+                    ])->label('customer')
+                    
+                    ?>
+
+                      <?= $form->field($model, 'id_mobil')->widget(Select2::classname(), [
+                    'data' => $data_mobil,
+                    'language' => 'en',
+                    'options' => ['placeholder' => 'mobil'],
+                    'pluginOptions' => [
+                    'allowClear' => true
+                        ],
                                     
-                                ])->label('mobil')
-                            ?>
-                <?=
-                    $form->field($model, 'tgl_pinjam')->widget(DateTimePicker::classname(), [
+                    ])->label('mobil')
+                    ?>
+
+                    <?=
+                    $form->field($model, 'tgl_pinjam')->widget(DatePicker::classname(), [
                         'options' => ['placeholder' => 'Masukan Tanggal dan Waktu'],
                         'pluginOptions' => [
+                        'todayHighlight' => true ,  
+                        'todayBtn' => true , 
                         'autoclose' => true,
-                        'format' => 'dd-M-yyyy hh:ii'
+                        'format' => 'yyyy-mm-dd '
                         ]
                     ]);
-                ?>
+                    ?>
 
-                <?=
-                    $form->field($model, 'tgl_kembali')->widget(DateTimePicker::classname(), [
+                    <?=
+                    $form->field($model, 'tgl_kembali')->widget(DatePicker::classname(), [
                         'options' => ['placeholder' => 'Masukan Tanggal dan Waktu'],
                         'pluginOptions' => [
+                        'todayHighlight' => true ,  
+                        'todayBtn' => true , 
                         'autoclose' => true,
-                        'format' => 'dd-M-yyyy hh:ii'
+                        'format' => 'yyyy-mm-dd '
                         ]
                     ]);
-                ?>
+                    ?>
 
-                <?= $form->field($model, 'harga')->textInput() ?>
+                    <?= $form->field($model, 'jam_pinjam')->widget(TimePicker::classname()); ?>
+                </div>
+                <div class="col-md-6">
+                    <?= $form->field($model, 'jam_kembali')->widget(TimePicker::classname()); ?>
 
-                <?= $form->field($model, 'denda')->textInput() ?>
+                    <?= $form->field($model, 'harga')->widget(
+                        \yii\widgets\MaskedInput::className(),
+                        [
+                            'clientOptions' => ['alias' => 'decimal', 'groupSeparator' => '.', 'autoGroup' => true, 'removeMaskOnSubmit' => true, 'rightAlign' => false, 'min' => 0],
+                            'options' => []
+                        ]
+                    ); ?>
 
-                <?=
-                    $form->field($model, 'tanggal')->widget(DatePicker::classname(), [
+                    <?= $form->field($model, 'denda')->widget(
+                        \yii\widgets\MaskedInput::className(),
+                        [
+                            'clientOptions' => ['alias' => 'decimal', 'groupSeparator' => '.', 'autoGroup' => true, 'removeMaskOnSubmit' => true, 'rightAlign' => false, 'min' => 0],
+                            'options' => []
+                        ]
+                    ); ?>
+
+                    <?= $form->field($model, 'tanggal')->widget(DatePicker::classname(), [
                         'options' => ['placeholder' => 'Masukan Tanggal'],
                         'pluginOptions' => [
                         'todayHighlight' => true ,  
                         'todayBtn' => true , 
                         'autoclose'=>true,
-                        'format' => 'dd-M-yyyy hh:ii'
-                        ]
-                    ]);
-                ?>
+                        'format' => 'yyyy-mm-dd '
+                            ]
+                        ]);
+                    ?>
 
-                <?= $form->field($model, 'status')->dropDownList(array(1 => "Lunas", 2 => "Belum Lunas")) ?>  
+                    <?= $form->field($model, 'status')->dropDownList(array(1 => "Lunas", 2 => "Belum Lunas"),['prompt' => 'Masukan Status']) ?>
 
-                <div class="form-group">
-                    <?= Html::a('<span class="btn-label"><i class="glyphicon glyphicon-arrow-left"></i></span>Kembali',['index'], ['class'=>'btn btn-danger btn-sm waves-effect-light']); ?>
-                    <span class="pull-right">
-                    <?= Html::submitButton('<span class="glyphicon glyphicon-floppy-saved"></span> Simpan', ['class' => 'btn btn-success']) ?>
-                    </span> 
+
                 </div>
-
-
+            </div>
+                <div class="form-group">
+                     <?= Html::a('<span class="glyphicon glyphicon-circle-arrow-left"></span> Kembali', ['index'], ['class' => 'btn btn-warning btn btn-sm']) ?>
+                    <?= Html::submitButton('<span class="glyphicon glyphicon-floppy-saved"></span> Simpan', ['class' => 'btn btn-success btn btn-sm']) ?>
+                </div>
                 <?php ActiveForm::end(); ?>
             </div>
+        </div>
+    </div>
 </div>

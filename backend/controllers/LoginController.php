@@ -79,6 +79,7 @@ class LoginController extends Controller
         $model = new Login();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
+             Yii::$app->session->setFlash('success', 'Disimpan');
             return $this->redirect(['view', 'id' => $model->id_login]);
         }
 
@@ -114,10 +115,7 @@ class LoginController extends Controller
             Yii::$app->user->logout();
             return $this->goHome();
 
-            Yii::$app->session->setFlash('success', [['Berhasil!', '
-                <p>Data Profil Berhasil Di Ubah.</p>
-                <p>Silahkan Login Dengan Username dan Password Yang Baru Diubah</p>
-            ']]);
+           
         }
 
         return $this->render('view_profile', [
@@ -151,7 +149,7 @@ class LoginController extends Controller
             }
             $model->save();
 
-
+            Yii::$app->session->setFlash('success', 'Disimpan');
             return $this->redirect(['view', 'id' => $model->id_login]);
         }
 

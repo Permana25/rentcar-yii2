@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 16, 2021 at 08:30 AM
+-- Generation Time: Mar 12, 2021 at 03:04 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -44,11 +44,12 @@ CREATE TABLE `customer` (
 
 INSERT INTO `customer` (`id_customer`, `nama`, `alamat`, `jenis_kelamin`, `no_telp`, `no_ktp`, `foto`) VALUES
 (16, 'Joe', 'Hungaria', '1', 867869203, 2147483647, '1611816537_joe.jpg'),
-(17, 'Jamal', 'Semarang Timur', '1', 2147483647, 2147483647, '1611979386_jamal.jpg'),
 (18, 'Chacha', 'Banyumanik', '2', 2147483647, 2147483647, '1611979465_chacha.jpg'),
 (19, 'Zahra ', 'Jakarta', '2', 2147483647, 2147483647, '1611979609_zahra.jpg'),
 (20, 'Cj', 'Amerika ', '1', 97483757, 2147483647, '1612145731_cj.jpg'),
-(21, 'Anzas febriyana', 'Cirebon', '1', 2147483647, 2147483647, '1613444913_anzas.jpg');
+(21, 'Anzas febriyana', 'Kabupaten Cirebon, sumber ', '1', 2147483647, 2147483647, '1615359425_anzas.jpg'),
+(22, 'Cici', 'Surabaya ', '2', 2147483647, 2147483647, '1614221837_cici.jpg'),
+(23, 'Rezha Agascha ', 'Majalengka, Jawa Barat ', '1', 2147483647, 2147483647, '1615273882_koala.jpg');
 
 -- --------------------------------------------------------
 
@@ -325,7 +326,157 @@ INSERT INTO `log` (`id`, `level`, `category`, `log_time`, `prefix`, `message`) V
 (0, 4, 'yii\\db\\Command::execute', 1613444914.0923, 'admin', 'INSERT INTO `customer` (`nama`, `alamat`, `jenis_kelamin`, `no_telp`, `no_ktp`, `foto`) VALUES (\'Anzas febriyana\', \'Cirebon\', \'1\', 2147483647, 2147483647, \'1613444913_anzas.jpg\')'),
 (0, 4, 'yii\\db\\Command::execute', 1613444996.5784, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=18'),
 (0, 4, 'yii\\db\\Command::execute', 1613444996.728, 'admin', 'INSERT INTO `transaksi` (`id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `harga`, `denda`, `tanggal`, `status`) VALUES (21, 18, \'2021-02-16 10:05\', \'2021-02-17 10:05\', 400000, 0, \'2021-02-16\', 1)'),
-(0, 4, 'yii\\db\\Command::execute', 1613445156.9867, 'admin', 'INSERT INTO `mobil` (`merk`, `no_plat`, `warna`, `tahun`, `status`, `foto`) VALUES (\'Suzuki Karimun Estilo\', \'B 9876 BY\', \'Ungu\', 2017, \'1\', \'1613445156_suzuki.jpg\')');
+(0, 4, 'yii\\db\\Command::execute', 1613445156.9867, 'admin', 'INSERT INTO `mobil` (`merk`, `no_plat`, `warna`, `tahun`, `status`, `foto`) VALUES (\'Suzuki Karimun Estilo\', \'B 9876 BY\', \'Ungu\', 2017, \'1\', \'1613445156_suzuki.jpg\')'),
+(0, 0, 'Login', 1613613385.9531, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613613385.9535, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613613385.9531, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1613702064.7324, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613702064.7329, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613702064.7324, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1613721145.679, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613721145.6794, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613721145.679, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1613787285.5307, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613787285.5312, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613787285.5307, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1613790043.4198, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613790043.4202, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613790043.4198, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1613795235.7889, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613795235.7893, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613795235.7889, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1613795658.3608, 'admin', 'INSERT INTO `menu_navigasi` (`nama_menu`, `url`, `id_parent`, `icon`, `status`, `no_urut`) VALUES (\'Dashboard\', \'web/index.php\', 0, \'tachnometer-alt\', 0, 6)'),
+(0, 4, 'yii\\db\\Command::execute', 1613795815.5689, 'admin', 'DELETE FROM `menu_navigasi` WHERE `id_menu`=12'),
+(0, 4, 'yii\\db\\Command::execute', 1613796320.3455, 'admin', 'INSERT INTO `menu_navigasi` (`nama_menu`, `url`, `id_parent`, `icon`, `status`, `no_urut`) VALUES (\'Dashboard\', \'site\', 0, \'box\', 0, 6)'),
+(0, 0, 'Login', 1613797385.4507, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613797385.4512, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613797385.4507, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1613797428.0179, 'admin', 'UPDATE `menu_navigasi` SET `id_parent`=0, `no_urut`=2, `status`=0 WHERE `id_menu`=13'),
+(0, 4, 'yii\\db\\Command::execute', 1613797437.7503, 'admin', 'DELETE FROM `menu_navigasi_role` WHERE `id_menu`=\'13\''),
+(0, 4, 'yii\\db\\Command::execute', 1613797437.8676, 'admin', 'INSERT INTO `menu_navigasi_role` (`id_system_role`, `id_menu`) VALUES (1, 13)'),
+(0, 4, 'yii\\db\\Command::execute', 1613797487.8307, 'admin', 'UPDATE `menu_navigasi` SET `id_parent`=0, `no_urut`=3, `status`=0 WHERE `id_menu`=8'),
+(0, 4, 'yii\\db\\Command::execute', 1613797521.4869, 'admin', 'UPDATE `menu_navigasi` SET `id_parent`=0, `no_urut`=4, `status`=0 WHERE `id_menu`=9'),
+(0, 4, 'yii\\db\\Command::execute', 1613797545.0354, 'admin', 'UPDATE `menu_navigasi` SET `id_parent`=0, `no_urut`=5, `status`=0 WHERE `id_menu`=10'),
+(0, 4, 'yii\\db\\Command::execute', 1613797577.396, 'admin', 'UPDATE `menu_navigasi` SET `id_parent`=0, `no_urut`=6, `status`=0 WHERE `id_menu`=11'),
+(0, 0, 'Login', 1613802098.1286, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613802098.1291, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613802098.1286, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1613969792.6763, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1613969792.6768, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1613969792.6763, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1613986407.5694, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=13'),
+(0, 4, 'yii\\db\\Command::execute', 1613986407.6751, 'admin', 'INSERT INTO `transaksi` (`id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `harga`, `denda`, `tanggal`, `status`) VALUES (21, 13, \'22-Feb-2021 16:30\', \'23-Feb-2021 16:30\', 500000, 0, \'22-Feb-2021 hh:ii\', 1)'),
+(0, 0, 'Login', 1614050729.2886, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614050729.2891, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614050729.2886, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1614050846.6173, 'admin', 'INSERT INTO `customer` (`nama`, `alamat`, `jenis_kelamin`, `no_telp`, `no_ktp`, `foto`) VALUES (\'Cici\', \'Sukabumi\', \'2\', 2147483647, 2147483647, \'1614050846_cici.jpg\')'),
+(0, 4, 'yii\\db\\Command::execute', 1614050954.4329, 'admin', 'INSERT INTO `mobil` (`merk`, `no_plat`, `warna`, `tahun`, `status`, `foto`) VALUES (\'Honda HRV\', \' N 0000 KL\', \'Silver\', 2017, \'1\', \'1614050954_hrv.jpg\')'),
+(0, 4, 'yii\\db\\Command::execute', 1614051388.144, 'admin', 'DELETE FROM `customer` WHERE `id_customer`=17'),
+(0, 4, 'yii\\db\\Command::execute', 1614053959.0462, 'admin', 'UPDATE `mobil` SET `status`=\'1\' WHERE `id_mobil`=12'),
+(0, 4, 'yii\\db\\Command::execute', 1614053959.1056, 'admin', 'DELETE FROM `transaksi` WHERE `id_transaksi`=1'),
+(0, 4, 'yii\\db\\Command::execute', 1614054195.6682, 'admin', 'DELETE FROM `customer` WHERE `id_customer`=22'),
+(0, 4, 'yii\\db\\Command::execute', 1614054298.1138, 'admin', 'DELETE FROM `mobil` WHERE `id_mobil`=20'),
+(0, 4, 'yii\\db\\Command::execute', 1614061621.3661, 'admin', 'UPDATE `mobil` SET `status`=\'1\' WHERE `id_mobil`=13'),
+(0, 4, 'yii\\db\\Command::execute', 1614061621.4329, 'admin', 'DELETE FROM `transaksi` WHERE `id_transaksi`=7'),
+(0, 4, 'yii\\db\\Command::execute', 1614061738.7033, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=19'),
+(0, 4, 'yii\\db\\Command::execute', 1614061738.755, 'admin', 'INSERT INTO `transaksi` (`id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `harga`, `denda`, `tanggal`, `status`) VALUES (21, 19, \'23-Feb-2021 13:25\', \'24-Feb-2021 13:25\', 500000, 0, \'23-Feb-2021 hh:ii\', 1)'),
+(0, 4, 'yii\\db\\Command::execute', 1614061993.7072, 'admin', 'INSERT INTO `mobil` (`merk`, `no_plat`, `warna`, `tahun`, `status`, `foto`) VALUES (\'Honda HRV\', \' N 0000 KL\', \'Silver\', 2017, \'1\', \'1614061993_hrv.jpg\')'),
+(0, 4, 'yii\\db\\Command::execute', 1614062463.9363, 'admin', 'UPDATE `mobil` SET `status`=\'1\' WHERE `id_mobil`=19'),
+(0, 4, 'yii\\db\\Command::execute', 1614062464.1005, 'admin', 'DELETE FROM `transaksi` WHERE `id_transaksi`=8'),
+(0, 4, 'yii\\db\\Command::execute', 1614062527.4304, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=21'),
+(0, 4, 'yii\\db\\Command::execute', 1614062527.498, 'admin', 'INSERT INTO `transaksi` (`id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `harga`, `denda`, `tanggal`, `status`) VALUES (21, 21, \'23-Feb-2021 13:40\', \'24-Feb-2021 13:40\', 500000, 0, \'23-Feb-2021 hh:ii\', 1)'),
+(0, 0, 'Login', 1614136669.7936, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614136669.7942, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614136669.7936, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1614148592.9913, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614148592.9918, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614148592.9913, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1614149150.8932, 'admin', 'UPDATE `mobil` SET `tahun`=2017, `status`=\'1\', `foto`=\'1614149150_hrv.jpg\' WHERE `id_mobil`=21'),
+(0, 4, 'yii\\db\\Command::execute', 1614149557.7487, 'admin', 'INSERT INTO `login` (`username`, `password`, `nama`, `foto`) VALUES (\'agascha\', \'123\', \'agascha\', \'avatar5.png\')'),
+(0, 4, 'yii\\db\\Command::execute', 1614149606.8529, 'admin', 'DELETE FROM `user_role` WHERE `id_login`=\'18\''),
+(0, 4, 'yii\\db\\Command::execute', 1614149606.922, 'admin', 'INSERT INTO `user_role` (`id_system_role`, `id_login`) VALUES (4, 18)'),
+(0, 0, 'Login', 1614149664.3416, 'reza', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614149664.3421, 'reza', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614149664.3416, \'reza\', \'Login\')'),
+(0, 0, 'Login', 1614149801.9979, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614149801.9984, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614149801.9979, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1614149866.8005, 'admin', 'UPDATE `login` SET `password`=\'25d55ad283aa400af464c76d713c07ad\', `foto`=\'1614149866_agascha.jpg\' WHERE `id_login`=18'),
+(0, 0, 'Login', 1614149911.9055, 'agascha', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614149911.9062, 'agascha', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614149911.9055, \'agascha\', \'Login\')'),
+(0, 0, 'Login', 1614149975.4589, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614149975.4598, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614149975.4589, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1614154284.7876, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=21'),
+(0, 4, 'yii\\db\\Command::execute', 1614154284.8468, 'admin', 'INSERT INTO `transaksi` (`id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `harga`, `denda`, `tanggal`, `status`) VALUES (21, 21, \'24-Feb-2021 15:10\', \'25-Feb-2021 15:10\', 500000, 0, \'24-Feb-2021 hh:ii\', 1)'),
+(0, 4, 'yii\\db\\Command::execute', 1614154603.1583, 'admin', 'UPDATE `transaksi` SET `id_customer`=21, `id_mobil`=21, `tgl_pinjam`=\'30-Dec-1900 00:00\', `tgl_kembali`=\'01-Dec-1900 00:00\', `harga`=500000, `denda`=0, `tanggal`=\'1900-11-30\', `status`=1 WHERE `id_transaksi`=7');
+INSERT INTO `log` (`id`, `level`, `category`, `log_time`, `prefix`, `message`) VALUES
+(0, 4, 'yii\\db\\Command::execute', 1614154687.4824, 'admin', 'UPDATE `transaksi` SET `id_customer`=20, `id_mobil`=18, `harga`=400000, `denda`=0, `status`=1 WHERE `id_transaksi`=6'),
+(0, 4, 'yii\\db\\Command::execute', 1614155808.7764, 'admin', 'UPDATE `transaksi` SET `id_customer`=21, `id_mobil`=21, `tgl_pinjam`=\'2021-11-30 12:0:0\', `tgl_kembali`=\'2021-11-30 12:0:0\', `harga`=500000, `denda`=0, `status`=1 WHERE `id_transaksi`=7'),
+(0, 0, 'Login', 1614221538.4434, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614221538.4439, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614221538.4434, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1614221837.5173, 'admin', 'INSERT INTO `customer` (`nama`, `alamat`, `jenis_kelamin`, `no_telp`, `no_ktp`, `foto`) VALUES (\'Cici\', \'Surabaya \', \'2\', 2147483647, 2147483647, \'1614221837_cici.jpg\')'),
+(0, 0, 'Login', 1614310599.9282, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614310599.9286, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614310599.9282, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1614400095.5768, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614400095.5773, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614400095.5768, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1614569233.0525, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614569233.0529, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614569233.0525, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1614667573.7991, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614667573.7995, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614667573.7991, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1614762677.0258, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614762677.0266, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614762677.0258, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1614825277.7978, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614825277.7983, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614825277.7978, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1614926026.4599, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1614926026.4603, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1614926026.4599, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1615001546.774, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1615001546.7745, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1615001546.774, \'admin\', \'Login\')'),
+(0, 0, 'Login', 1615044065.1764, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1615044065.1769, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1615044065.1764, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1615044981.9835, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=12'),
+(0, 4, 'yii\\db\\Command::execute', 1615044982.2805, 'admin', 'INSERT INTO `transaksi` (`denda`, `id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `harga`, `tanggal`, `status`, `total`) VALUES (200000, 22, 12, \'2021-03-06 10:35:11\', \'2021-03-07 10:35:11\', 500000, \'2021-03-06 \', 1, 300000)'),
+(0, 4, 'yii\\db\\Command::execute', 1615045038.5797, 'admin', 'UPDATE `mobil` SET `status`=\'1\' WHERE `id_mobil`=12'),
+(0, 4, 'yii\\db\\Command::execute', 1615045038.6739, 'admin', 'DELETE FROM `transaksi` WHERE `id_transaksi`=8'),
+(0, 4, 'yii\\db\\Command::execute', 1615045106.5573, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=12'),
+(0, 4, 'yii\\db\\Command::execute', 1615045106.6409, 'admin', 'INSERT INTO `transaksi` (`denda`, `id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `harga`, `tanggal`, `status`, `total`) VALUES (100000, 22, 12, \'2021-03-06 10:35:35\', \'2021-03-08 10:35:35\', 500000, \'2021-03-06 \', 1, 600000)'),
+(0, 4, 'yii\\db\\Command::execute', 1615045727.6592, 'admin', 'UPDATE `mobil` SET `status`=\'1\' WHERE `id_mobil`=14'),
+(0, 4, 'yii\\db\\Command::execute', 1615045727.75, 'admin', 'DELETE FROM `transaksi` WHERE `id_transaksi`=4'),
+(0, 4, 'yii\\db\\Command::execute', 1615045746.3007, 'admin', 'UPDATE `mobil` SET `status`=\'1\' WHERE `id_mobil`=16'),
+(0, 4, 'yii\\db\\Command::execute', 1615045746.4553, 'admin', 'DELETE FROM `transaksi` WHERE `id_transaksi`=5'),
+(0, 4, 'yii\\db\\Command::execute', 1615045771.3158, 'admin', 'UPDATE `mobil` SET `status`=\'1\' WHERE `id_mobil`=18'),
+(0, 4, 'yii\\db\\Command::execute', 1615045771.3705, 'admin', 'DELETE FROM `transaksi` WHERE `id_transaksi`=6'),
+(0, 4, 'yii\\db\\Command::execute', 1615045788.0319, 'admin', 'UPDATE `mobil` SET `status`=\'1\' WHERE `id_mobil`=21'),
+(0, 4, 'yii\\db\\Command::execute', 1615045788.1183, 'admin', 'DELETE FROM `transaksi` WHERE `id_transaksi`=7'),
+(0, 4, 'yii\\db\\Command::execute', 1615045905.5715, 'admin', 'DELETE FROM `mobil` WHERE `id_mobil`=17'),
+(0, 4, 'yii\\db\\Command::execute', 1615047016.2439, 'admin', 'UPDATE `mobil` SET `status`=\'1\' WHERE `id_mobil`=12'),
+(0, 4, 'yii\\db\\Command::execute', 1615047016.2933, 'admin', 'DELETE FROM `transaksi` WHERE `id_transaksi`=9'),
+(0, 4, 'yii\\db\\Command::execute', 1615047190.8782, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=12'),
+(0, 4, 'yii\\db\\Command::execute', 1615047190.9575, 'admin', 'INSERT INTO `transaksi` (`denda`, `id_customer`, `id_mobil`, `tgl_pinjam`, `jam_pinjam`, `tgl_kembali`, `jam_kembali`, `harga`, `tanggal`, `status`, `total`) VALUES (200000, 21, 12, \'2021-03-06 \', NULL, \'2021-03-07 \', NULL, 1500000, \'2021-03-06 \', 1, 1700000)'),
+(0, 4, 'yii\\db\\Command::execute', 1615047588.9234, 'admin', 'UPDATE `mobil` SET `status`=\'1\' WHERE `id_mobil`=12'),
+(0, 4, 'yii\\db\\Command::execute', 1615047589.0273, 'admin', 'DELETE FROM `transaksi` WHERE `id_transaksi`=10'),
+(0, 4, 'yii\\db\\Command::execute', 1615053845.4423, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=12'),
+(0, 4, 'yii\\db\\Command::execute', 1615053845.8298, 'admin', 'INSERT INTO `transaksi` (`denda`, `id_customer`, `id_mobil`, `tgl_pinjam`, `jam_pinjam`, `tgl_kembali`, `jam_kembali`, `harga`, `tanggal`, `status`, `total`) VALUES (100000, 16, 12, \'2021-03-07 \', \'02:00 PM\', \'2021-03-08 \', \'02:00 PM\', 500000, \'2021-03-07 \', 1, 600000)'),
+(0, 0, 'Login', 1615101903.0226, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1615101903.0231, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1615101903.0226, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1615105789.989, 'admin', 'UPDATE `customer` SET `alamat`=\'Cirebon, sumber \', `no_telp`=2147483647, `no_ktp`=2147483647, `foto`=\'1614149150_hrv.jpg\' WHERE `id_customer`=21'),
+(0, 4, 'yii\\db\\Command::execute', 1615106863.3528, 'admin', 'UPDATE `customer` SET `alamat`=\'Kabupaten Cirebon, sumber \', `no_telp`=2147483647, `no_ktp`=2147483647 WHERE `id_customer`=21'),
+(0, 0, 'Login', 1615173103.7497, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1615173103.7502, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1615173103.7497, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1615174518.5095, 'admin', 'INSERT INTO `menu_navigasi` (`nama_menu`, `url`, `id_parent`, `icon`, `status`, `no_urut`) VALUES (\'Laporan Transaksi\', \'laporan\', 0, \'book\', 0, 7)'),
+(0, 4, 'yii\\db\\Command::execute', 1615174582.508, 'admin', 'DELETE FROM `menu_navigasi_role` WHERE `id_menu`=\'14\''),
+(0, 4, 'yii\\db\\Command::execute', 1615174582.7052, 'admin', 'INSERT INTO `menu_navigasi_role` (`id_system_role`, `id_menu`) VALUES (2, 14)'),
+(0, 4, 'yii\\db\\Command::execute', 1615174582.7791, 'admin', 'INSERT INTO `menu_navigasi_role` (`id_system_role`, `id_menu`) VALUES (1, 14)'),
+(0, 4, 'yii\\db\\Command::execute', 1615175931.5888, 'admin', 'UPDATE `menu_navigasi` SET `id_parent`=0, `no_urut`=7, `status`=0 WHERE `id_menu`=11'),
+(0, 4, 'yii\\db\\Command::execute', 1615175947.9419, 'admin', 'DELETE FROM `menu_navigasi_role` WHERE `id_menu`=\'11\''),
+(0, 4, 'yii\\db\\Command::execute', 1615175948.8334, 'admin', 'INSERT INTO `menu_navigasi_role` (`id_system_role`, `id_menu`) VALUES (1, 11)'),
+(0, 4, 'yii\\db\\Command::execute', 1615175989.5325, 'admin', 'UPDATE `menu_navigasi` SET `id_parent`=0, `no_urut`=6, `status`=0 WHERE `id_menu`=14'),
+(0, 4, 'yii\\db\\Command::execute', 1615176000.6983, 'admin', 'DELETE FROM `menu_navigasi_role` WHERE `id_menu`=\'14\''),
+(0, 4, 'yii\\db\\Command::execute', 1615176000.9185, 'admin', 'INSERT INTO `menu_navigasi_role` (`id_system_role`, `id_menu`) VALUES (2, 14)'),
+(0, 4, 'yii\\db\\Command::execute', 1615176000.9912, 'admin', 'INSERT INTO `menu_navigasi_role` (`id_system_role`, `id_menu`) VALUES (1, 14)'),
+(0, 0, 'Login', 1615270337.9193, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1615270337.9199, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1615270337.9193, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1615273882.9067, 'admin', 'INSERT INTO `customer` (`nama`, `alamat`, `jenis_kelamin`, `no_ktp`, `no_telp`, `foto`) VALUES (\'Rezha Agascha \', \'Majalengka, Jawa Barat \', \'1\', 2147483647, 2147483647, \'1615273882_koala.jpg\')'),
+(0, 4, 'yii\\db\\Command::execute', 1615274425.0281, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=13'),
+(0, 4, 'yii\\db\\Command::execute', 1615274425.2446, 'admin', 'INSERT INTO `transaksi` (`denda`, `id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `jam_pinjam`, `jam_kembali`, `harga`, `tanggal`, `status`, `total`) VALUES (250000, 23, 13, \'2021-03-09 \', \'2021-03-10 \', \'02:15 PM\', \'02:15 PM\', 1500000, \'2021-03-09 \', 1, 1750000)'),
+(0, 0, 'Login', 1615346129.4263, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1615346129.4268, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1615346129.4263, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1615350498.389, 'admin', 'UPDATE `mobil` SET `status`=\'2\' WHERE `id_mobil`=14'),
+(0, 4, 'yii\\db\\Command::execute', 1615350498.775, 'admin', 'INSERT INTO `transaksi` (`denda`, `id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `jam_pinjam`, `jam_kembali`, `harga`, `tanggal`, `status`, `total`) VALUES (1500000, 21, 14, \'2021-03-10 \', \'2021-03-11 \', \'11:15 AM\', \'11:15 AM\', 5000000, \'2021-03-10 \', 1, 6500000)'),
+(0, 4, 'yii\\db\\Command::execute', 1615359425.1114, 'admin', 'UPDATE `customer` SET `no_telp`=2147483647, `no_ktp`=2147483647, `foto`=\'1615359425_anzas.jpg\' WHERE `id_customer`=21'),
+(0, 4, 'yii\\db\\Command::execute', 1615359571.5923, 'admin', 'INSERT INTO `mobil` (`merk`, `no_plat`, `warna`, `tahun`, `status`, `foto`) VALUES (\'Nissan Juke \', \'H 8989 HI\', \'abu-abu\', 2019, \'1\', \'1615359571_juke.jpg\')'),
+(0, 0, 'Login', 1615428508.9595, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1615428508.9599, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1615428508.9595, \'admin\', \'Login\')'),
+(0, 4, 'yii\\db\\Command::execute', 1615430189.1923, 'admin', 'UPDATE `mobil` SET `jenis`=\'2\', `tahun`=2019, `foto`=\'1615430189_juke.jpg\' WHERE `id_mobil`=22'),
+(0, 4, 'yii\\db\\Command::execute', 1615430317.6129, 'admin', 'UPDATE `mobil` SET `no_plat`=\'H 8989 KL\', `tahun`=2019, `foto`=\'1615430317_juke.jpg\' WHERE `id_mobil`=22'),
+(0, 4, 'yii\\db\\Command::execute', 1615430515.9573, 'admin', 'UPDATE `mobil` SET `tahun`=2019, `foto`=\'1615430515_juke.jpg\' WHERE `id_mobil`=22'),
+(0, 0, 'Login', 1615437317.1181, 'admin', 'Login'),
+(0, 4, 'yii\\db\\Command::execute', 1615437317.1186, 'admin', 'INSERT INTO `log` (`level`, `category`, `log_time`, `prefix`, `message`) VALUES (0, \'Login\', 1615437317.1181, \'admin\', \'Login\')');
 
 -- --------------------------------------------------------
 
@@ -347,7 +498,8 @@ CREATE TABLE `login` (
 
 INSERT INTO `login` (`id_login`, `username`, `password`, `nama`, `foto`) VALUES
 (16, 'reza', '202cb962ac59075b964b07152d234b70', 'reza', '1610596861_download.jpg'),
-(17, 'admin', '202cb962ac59075b964b07152d234b70', 'admin', '1610767699_admin.jpg');
+(17, 'admin', '202cb962ac59075b964b07152d234b70', 'admin', '1610767699_admin.jpg'),
+(18, 'agascha', '25d55ad283aa400af464c76d713c07ad', 'agascha', '1614149866_agascha.jpg');
 
 -- --------------------------------------------------------
 
@@ -374,10 +526,12 @@ INSERT INTO `menu_navigasi` (`id_menu`, `nama_menu`, `url`, `id_parent`, `no_uru
 (2, 'Menu Navigasi', 'menu-navigasi', 1, 1, 'bars', 0),
 (3, 'Data Login', 'login', 1, 2, 'bars', 0),
 (4, 'Data Hak Akses', 'systemrole', 1, 3, 'bars', 1),
-(8, 'Customer', 'customer', 0, 2, 'fas fa-users', 0),
-(9, 'Mobil', 'mobil', 0, 3, 'fas fa-truck-moving', 0),
-(10, 'Transaksi', 'transaksi', 0, 4, 'fas fa-hand-holding-usd', 0),
-(11, 'Log', 'log', 0, 5, 'bars', 0);
+(8, 'Customer', 'customer', 0, 3, 'fas fa-users', 0),
+(9, 'Mobil', 'mobil', 0, 4, 'fas fa-truck-moving', 0),
+(10, 'Transaksi', 'transaksi', 0, 5, 'fas fa-hand-holding-usd', 0),
+(11, 'Log', 'log', 0, 7, 'bars', 0),
+(13, 'Dashboard', 'site', 0, 2, 'box', 0),
+(14, 'Laporan Transaksi', 'laporan', 0, 6, 'book', 0);
 
 -- --------------------------------------------------------
 
@@ -407,13 +561,15 @@ INSERT INTO `menu_navigasi_role` (`id_menu_role`, `id_menu`, `id_system_role`) V
 (11, 7, 1),
 (14, 8, 2),
 (15, 8, 1),
-(18, 11, 1),
 (23, 12, 1),
-(24, 13, 1),
 (25, 9, 2),
 (26, 9, 1),
 (27, 10, 2),
-(28, 10, 1);
+(28, 10, 1),
+(29, 13, 1),
+(32, 11, 1),
+(33, 14, 2),
+(34, 14, 1);
 
 -- --------------------------------------------------------
 
@@ -425,6 +581,7 @@ CREATE TABLE `mobil` (
   `id_mobil` int(50) NOT NULL,
   `merk` varchar(255) NOT NULL,
   `no_plat` varchar(255) NOT NULL,
+  `jenis` varchar(50) DEFAULT NULL,
   `warna` varchar(255) NOT NULL,
   `tahun` int(50) NOT NULL,
   `status` varchar(255) NOT NULL,
@@ -435,15 +592,16 @@ CREATE TABLE `mobil` (
 -- Dumping data for table `mobil`
 --
 
-INSERT INTO `mobil` (`id_mobil`, `merk`, `no_plat`, `warna`, `tahun`, `status`, `foto`) VALUES
-(12, 'Honda Jazz', 'E 7374 WO', 'Merah', 2019, '2', '1611816307_honda.jpg'),
-(13, 'Nissan ', 'G 7776 GW', 'Oren ', 2019, '1', '1611978083_nissan.jpg'),
-(14, 'Mitsubishi', 'G 7776 GW', 'Biru', 2020, '2', '1611978468_e.jpg'),
-(15, 'Toyota Yaris', 'G 9898 TR', 'kuning', 2020, '1', '1611978834_images.jpg'),
-(16, 'Toyota Avanza', 'E 4545 RW', 'Hitam', 2017, '2', '1611979035_Avanza.jpg'),
-(17, 'Daihatsu Ayla', 'K 8976 HB', 'Putih ', 2018, '2', '1611979088_Ayla.jpg'),
-(18, 'Toyota Fortuner', 'Y 7689 BT', 'Coklat', 2019, '2', '1612145787_fortuner.jpg'),
-(19, 'Suzuki Karimun Estilo', 'B 9876 BY', 'Ungu', 2017, '1', '1613445156_suzuki.jpg');
+INSERT INTO `mobil` (`id_mobil`, `merk`, `no_plat`, `jenis`, `warna`, `tahun`, `status`, `foto`) VALUES
+(12, 'Honda Jazz', 'E 7374 WO', '2', 'Merah', 2019, '2', '1611816307_honda.jpg'),
+(13, 'Nissan ', 'G 7776 GW', '2', 'Oren ', 2019, '2', '1611978083_nissan.jpg'),
+(14, 'Mitsubishi', 'G 7776 GW', '2', 'Biru', 2020, '2', '1611978468_e.jpg'),
+(15, 'Toyota Yaris', 'G 9898 TR', '1', 'kuning', 2020, '1', '1611978834_images.jpg'),
+(16, 'Toyota Avanza', 'E 4545 RW', '2', 'Hitam', 2017, '1', '1611979035_Avanza.jpg'),
+(18, 'Toyota Fortuner', 'Y 7689 BT', '1', 'Coklat', 2019, '1', '1612145787_fortuner.jpg'),
+(19, 'Suzuki Karimun Estilo', 'B 9876 BY', '2', 'Ungu', 2017, '1', '1613445156_suzuki.jpg'),
+(21, 'Honda HRV', ' N 0000 KL', '1', 'Silver', 2017, '1', '1614149150_hrv.jpg'),
+(22, 'Nissan Juke ', 'H 8989 KL', '2', 'abu-abu', 2019, '1', '1615430515_juke.jpg');
 
 -- --------------------------------------------------------
 
@@ -487,24 +645,25 @@ CREATE TABLE `transaksi` (
   `id_transaksi` int(50) NOT NULL,
   `id_customer` int(50) NOT NULL,
   `id_mobil` int(50) NOT NULL,
-  `tgl_pinjam` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `tgl_kembali` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `tgl_pinjam` date NOT NULL,
+  `tgl_kembali` date NOT NULL,
+  `jam_pinjam` time DEFAULT NULL,
+  `jam_kembali` time DEFAULT NULL,
   `harga` int(50) NOT NULL,
   `denda` int(50) NOT NULL,
   `tanggal` date NOT NULL,
-  `status` int(2) NOT NULL
+  `status` int(2) NOT NULL,
+  `total` int(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `transaksi`
 --
 
-INSERT INTO `transaksi` (`id_transaksi`, `id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `harga`, `denda`, `tanggal`, `status`) VALUES
-(1, 16, 12, '2021-01-29 14:25:00', '2021-01-30 14:25:00', 150000, 0, '2021-01-29', 1),
-(3, 19, 17, '2021-01-30 11:05:00', '2021-01-31 11:05:00', 400000, 0, '2021-01-30', 1),
-(4, 20, 14, '2021-02-01 09:15:00', '2021-02-02 09:15:00', 250000, 0, '2021-02-01', 1),
-(5, 17, 16, '2021-02-01 09:20:00', '2021-02-02 09:20:00', 150000, 0, '2021-02-01', 1),
-(6, 21, 18, '2021-02-16 10:05:00', '2021-02-17 10:05:00', 400000, 0, '2021-02-16', 1);
+INSERT INTO `transaksi` (`id_transaksi`, `id_customer`, `id_mobil`, `tgl_pinjam`, `tgl_kembali`, `jam_pinjam`, `jam_kembali`, `harga`, `denda`, `tanggal`, `status`, `total`) VALUES
+(11, 16, 12, '2021-03-07', '2021-03-08', '02:00:00', '02:00:00', 500000, 100000, '2021-03-07', 1, 600000),
+(12, 23, 13, '2021-03-09', '2021-03-10', '02:15:00', '02:15:00', 1500000, 250000, '2021-03-09', 1, 1750000),
+(13, 21, 14, '2021-03-10', '2021-03-11', '11:15:00', '11:15:00', 5000000, 1500000, '2021-03-10', 1, 6500000);
 
 -- --------------------------------------------------------
 
@@ -541,7 +700,7 @@ INSERT INTO `user_role` (`id_user_role`, `id_system_role`, `id_login`) VALUES
 (32, 2, 15),
 (45, 2, 16),
 (48, 1, 17),
-(41, 2, 18),
+(49, 4, 18),
 (40, 2, 19),
 (47, 2, 17),
 (46, 1, 16);
@@ -614,31 +773,31 @@ ALTER TABLE `user_role`
 -- AUTO_INCREMENT for table `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id_customer` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_customer` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id_login` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `menu_navigasi`
 --
 ALTER TABLE `menu_navigasi`
-  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `menu_navigasi_role`
 --
 ALTER TABLE `menu_navigasi_role`
-  MODIFY `id_menu_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id_menu_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `mobil`
 --
 ALTER TABLE `mobil`
-  MODIFY `id_mobil` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id_mobil` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `setting`
@@ -656,13 +815,13 @@ ALTER TABLE `system_role`
 -- AUTO_INCREMENT for table `transaksi`
 --
 ALTER TABLE `transaksi`
-  MODIFY `id_transaksi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_transaksi` int(50) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user_role`
 --
 ALTER TABLE `user_role`
-  MODIFY `id_user_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_user_role` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

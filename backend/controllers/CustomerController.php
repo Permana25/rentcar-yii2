@@ -26,7 +26,7 @@ class CustomerController extends Controller
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
-                    'delete' => ['POST'],
+                    'delete' => ['POST','GET'],
                 ],
             ],
         ];
@@ -53,9 +53,12 @@ class CustomerController extends Controller
             'pagination' => $pages,
         ]);
 
+            $model = Customer::find()->all();
+            
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            // 'searchModel' => $searchModel,
+            // 'dataProvider' => $dataProvider,
+            'model' => $model,
         ]);
     }
 
@@ -85,7 +88,7 @@ class CustomerController extends Controller
             $model->foto=UploadedFile::getInstance($model,'foto');
             $model->save();
             
-            Yii::$app->session->setFlash('warning', [['Perhatian!', 'Data berhasil diinput']]);
+             Yii::$app->session->setFlash('success', 'Disimpan');
             return $this->redirect(['view', 'id' => $model->id_customer]);
         }
 
@@ -109,7 +112,7 @@ class CustomerController extends Controller
             $model->foto=UploadedFile::getInstance($model,'foto');
             $model->save();
 
-            Yii::$app->session->setFlash('warning', [['Perhatian!', 'Data berhasil disave']]);
+             Yii::$app->session->setFlash('success', 'Disimpan');
             return $this->redirect(['view', 'id' => $model->id_customer]);
         }
 

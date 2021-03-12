@@ -1,218 +1,136 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<link rel="stylesheet" type="text/css" href="css/laporan2.css"/>
-<title>Laporan Transaksi</title></head>
-<body>
-<div class="box" width="100%">
-<div style="text-align:center; ">
-    <p><b><h1 style="font-size:40px">LAPORAN TRANSAKSI</h1></b></p>
-        <img src="upload/logo1.png" height="100px" width="200px"/><br/>
-            <hr  width="100%"/>
-        <img src="upload/<?= $model->customer->foto ?>"height="200" width="300">
-    <hr  width="100%"/>
-</div>
-<table align="center" id="transaksi" border='1'width="100%">
-    <th colspan="4" class="label1"> IDENTITAS CUSTOMER </th>
-        <tr>
-            <td colspan="4" class="">
-            <table align="center" id="transaksi" border='1'>
-        </tr>
-        <thead>
-                <th> Nama </th>
-                <th> Alamat </th>
-                <th> Jenis Kelamin</th>
-                <th> No Telp </th>
-                <th> No KTP </th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>  <?= $model->customer->nama ?></td>
-                <td>  <?= $model->customer->alamat ?></td>
-                <td>  <?= ($model->customer->jenis_kelamin == 1) ? 'Laki-Laki' : 'Perempuan' ?></td>
-                <td>  <?= $model->customer->no_telp ?></td>
-                <td>  <?= $model->customer->no_ktp ?></td>
-                </tr>
-        </tbody>    
-            
-        <!-- <tr> -->
-            <!-- <th class="th_samping_gambar"> Nama </th> -->
-            <!-- <td>  <?= $model->customer->nama ?></td> -->
-        <!-- </tr> -->
-        <!-- <tr> -->
-            <!-- <th class="th_samping_gambar"> Alamat </th> -->
-            <!-- <td>  <?= $model->customer->alamat ?></td> -->
-        <!-- </tr> -->
-        <!-- <tr> -->
-            <!-- <th class="th_samping_gambar"> Jenis Kelamin </th> -->
-            <!-- <td>  <?= ($model->customer->jenis_kelamin == 1) ? 'Laki-Laki' : 'Perempuan' ?></td> -->
-        <!-- </tr> -->
-        <!-- <tr> -->
-            <!-- <th class="th_samping_gambar"> No Telp </th> -->
-            <!-- <td>  <?= $model->customer->no_telp ?></td> -->
-        <!-- </tr> -->
-        <!-- <tr> -->
-            <!-- <th class="th_samping_gambar"> No KTP </th> -->
-            <!-- <td>  <?= $model->customer->no_ktp ?></td> -->
-        <!-- </tr> -->
-        <tr>
-</table>
-<hr  width="100%"/>
-<table align="center" id="transaksi" border='1' width="100%">
-    <th colspan="4" class="label1"> DATA TRANSAKSI </th>
-        <tr>
-            <td colspan="4" class="">
-                <table align="center" id="transaksi" border='1'>
-                    <thead>
-                        <th> Nama Mobil </th>
-                        <th> Tanggal Pinjam </th>
-                        <th> Tanggal Kembali </th>
-                        <th> Harga </th>
-                        <th> Status </th>
-                    </thead>
-                    <tbody>
-                            <tr>
-                                <td><?= $model->mobil->merk ?></td>
-                                <td><?= tanggal_indo(date('Y-m-d', strtotime($model->tgl_pinjam)), true).' '.date('H:i ', strtotime($model->tgl_pinjam)) ?></td>
-                                <td><?= tanggal_indo(date('Y-m-d', strtotime($model->tgl_kembali)), true).' '.date('H:i ', strtotime($model->tgl_kembali)) ?></td>
-                                <td><?= ribuan($model->harga) ?></td>
-                                <td><?= ($model->status == 1) ? 'Lunas' : 'Belum Lunas' ?></td>
-                            </tr>
-                  </tbody>
-            </table>
-        </tr>
-    </thead>
-</table>
-<div class="tandatangan" >
-<br/>
-    <b>CEO Rental GSS</b><br/>
-        <br/><br/><br/><br/><br/><hr/>
-         <b>   .....   </b>  
-</div>
-<div class="tandatangan2">
-    <br/>
-            <b><?= tanggal_indo($model->tanggal,true) ?><br/><br/><br/><br/>
-    <br/>
-<br/><hr/>
-    <?=$model->customer->nama?>  
-</div>
-</div>
-</body>
-</html>
+<?php
+
+use yii\helpers\Html;
+use backend\models\Customer;
+use backend\models\Mobil;
+use backend\models\Transaksi;
+
+?>
 
 <style>
-.laporan {
-    font-weight: bold;
-    color: #00F;
-    font-size: 18px;
-}
-.laporan table tr th {
-    color: #000;
-}
-
-.laporan table tr td {
-    color: #000;
-    font-weight: normal;
-}
-
-.laporan table {
-    font-size: 14px;
-}
-
-.tandatangan{
-    text-align:center; width:425px;float:left;
-}
-
-.tandatangan2{
-    text-align:center; margin-left:545px;
-}
-
-.kop{
-    text-align:center;
-    margin-left:0px;
-    width:270px;
-    margin-bottom:-10px;
-}
-.th_samping_gambar{
- /*Vertical-align: center;*/
- text-align: center;
-}
-.table1 {
-        border: 1px solid black;
+    .table {
+        /border: solid 2px;/
         border-collapse: collapse;
-        width: 100%;
-        padding: 1px;
-        font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 1.42857143;
+        /text-transform: uppercase;/
+        /* line-height: 1; */
     }
 
-    .table1 th {
-        padding: 4px;
-        /*border-bottom: 1px solid #000000; */
-    }
+    /*.td1 {
+        margin-right: -5px;
+    }*/
 
-    .table1 td {
-        padding: 4px;
-        border-bottom: 1px solid black;
-        /* border-left: 1px solid #000000; */
-        background-color: #F5F5F5;
-    }
-
-    .label1 {
-        text-align: center;
-        border-left: 1px solid black;
-        background-color: #3c8dbc;
-        /* border-color: #367fa9; */
-        color: white;
-    }
-
-    .th_samping_gambar {
-        width: 20%;
-        text-align: left;
-        white-space: nowrap;
-        border-left: 1px solid black;
-        border-bottom: 1px solid black;
-        background-color: #F5F5F5;
-    }
-
-    .table2 {
-        border: 1px solid black;
-        border-collapse: collapse;
-        width: 100%;
-        padding: 1px;
-        font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 1.42857143;
-    }
-
-    .table2 th {
-        padding: 4px;
-        border: 1px solid black;
-    }
-
-    .table2 td {
-        padding: 4px;
-        border: 1px solid black;
-        background-color: #F5F5F5;
-    }
-
-    body {
-        -webkit-print-color-adjust: exact !important;
-    }
-
-    @media print {
-        @page {
-            /* size: 297mm 210mm; */
-        }
-    }
-    .box {
-        width: 100%x;
-        border-style: ridge;
-        padding: 50px;
-        text-align : center;
-        
+    .table td {
+        /padding-left: 11px;/
+        padding-right: 11px;
     }
 </style>
+<table class="table" width="15%">
+    <thead>
+        <tr>
+            <td colspan="3" align="center" style="padding-bottom: 10px;"><b style="font-size: 11px;">GSS RENTAL MOBIL<br> </b><p><img src="upload/logo1.png" height="50px" width="100x"></p></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <div style="font-size: 11px;">No. Transaksi</div>
+            </td>
+            <td colspan="2">
+                <p style="font-size: 11px;">: <?= ($model->id_transaksi != '') ? $model->id_transaksi : '< no invoice >'; ?></p>
+            </td>
+        </tr>
+        <?php
+        if ($model->id_customer > 0) {
+        ?>
+            <tr>
+                <td>
+                    <div style="font-size: 11px;">Nama </div>
+                </td>
+                <td colspan="2">
+                    <p style="font-size: 11px;">: <?= (!empty($model->customer->nama)) ? $model->customer->nama : 'Customer tidak ada/ sudah dihapus' ?></p>
+                </td>
+            </tr>
+        <?php } ?>
+        <tr>
+            <td>
+                <p style="font-size: 11px;">Tanggal Pinjam</p>
+            </td>
+            <td colspan="2">
+                <p style="font-size: 11px;">: <?= tanggal_indo($model->tgl_pinjam,true) ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-size: 11px;">Tanggal Kembali</p>
+            </td>
+            <td colspan="2">
+                <p style="font-size: 11px;">: <?= tanggal_indo($model->tgl_kembali,true) ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-size: 11px;">Jam Pinjam</p>
+            </td>
+            <td colspan="2">
+                <p style="font-size: 11px;">: <?= ($model->jam_pinjam) ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-size: 11px;">Jam Kembali</p>
+            </td>
+            <td colspan="2">
+                <p style="font-size: 11px;">: <?= ($model->jam_kembali) ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-size: 11px; ">Harga</p>
+            </td>
+            <td colspan="2">
+                <p style="font-size: 11px;">: <?= 'Rp.' . ribuan($model->harga) ?></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p style="font-size: 11px;">Denda</p>
+            </td>
+            <td colspan="2">
+                <p style="font-size: 11px;">: <?= 'Rp.' . ribuan($model->denda )?></p>
+            </td>
+        </tr>
+<!--         <tr>
+            <td>
+                <p style="font-size: 11px;">Tanggal</p>
+            </td>
+            <td colspan="2">
+                <p style="font-size: 11px;">: <?= tanggal_indo($model->tanggal,true) ?></p>
+            </td>
+        </tr>  -->
+        <tr>
+            <td>
+                <p style="font-size: 11px;">Total</p>
+            </td>
+            <td colspan="2">
+                <p style="font-size: 11px;">: <?= 'Rp.' . ribuan($model->total )?></p>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" style="padding-bottom: 12px;"></td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr style="border-top: 1px solid black;">
+            <td align="center" colspan="3" style="padding-top: 12px;">
+                <p style="font-size: 11px;">.:TERIMA KASIH:.<br>Sudah merental mobil <br>di GSS RENTAL <br> *</p>
+            </td>
+        </tr>
+    </tfoot>
+</table>
+
+
+<script>
+    window.print();
+    // console.log(link);
+    // setTimeout(window.location = link, 500);
+</script>

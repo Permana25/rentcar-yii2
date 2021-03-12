@@ -27,6 +27,7 @@ if (Yii::$app->user->isGuest) {
     <!DOCTYPE html>
     <html lang="<?= Yii::$app->language ?>">
     <head>
+        <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous">
         <meta charset="<?= Yii::$app->charset ?>"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <?= Html::csrfMetaTags() ?>
@@ -67,7 +68,12 @@ if (Yii::$app->user->isGuest) {
     </div>
 
     <?php $this->endBody() ?>
+     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
     </body>
+    <script>
+            $('.datatables').DataTable();
+    </script>
     </html>
     <?php $this->endPage() ?>
 <?php } ?>

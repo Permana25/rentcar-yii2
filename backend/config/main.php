@@ -42,15 +42,17 @@ function tanggal_indo($tanggal, $cetak_hari = false)
         'Desember'
     );
     $split    = explode('-', $tanggal);
-    $tgl_indo = $split[2] . ' ' . $bulan[(int) $split[1]] . ' ' . $split[0];
+    if ($tanggal > 0) {
+        $tgl_indo = $split[2] . ' ' . $bulan[(int) $split[1]] . ' ' . $split[0];
 
-    if ($cetak_hari) {
-        $num = date('N', strtotime($tanggal));
-        return $hari[$num] . ', ' . $tgl_indo;
+        if ($cetak_hari) {
+            $num = date('N', strtotime($tanggal));
+            return $hari[$num] . ', ' . $tgl_indo;
+        }
+
+        return $tgl_indo;
     }
-    return $tgl_indo;
 }
-
 function tanggal_indo2($str)
 {
     $tr = trim($str);

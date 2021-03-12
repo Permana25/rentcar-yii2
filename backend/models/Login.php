@@ -76,7 +76,7 @@ class Login extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     }
 
     public function getAuthKey(){
-            throw new NotSupportedException();
+            // throw new NotSupportedException();
             //return $this->authKey;//Here I return a value of my authKey column
     }
 
