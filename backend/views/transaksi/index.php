@@ -33,7 +33,7 @@ $this->title = 'Transaksi';
                         <thead>
                             <tr>
                                 <th style="white-space: nowrap;">No</th>
-                                <th style="white-space: nowrap;">Cetak</th>
+                                <th style="white-space: nowrap;">Invoice</th>
                                 <th style="white-space: nowrap;">Customer</th>
                                 <th style="white-space: nowrap;">Merk</th>
                                 <th style="white-space: nowrap;">Tanggal Pinjam</th>

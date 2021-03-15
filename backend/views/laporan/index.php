@@ -98,7 +98,7 @@ $this->title = 'Laporan Transaksi';
                         <table class="table datatables">
                         <thead>
                             <tr>
-                                <th style="white-space: nowrap;">#</th>
+                                <th style="white-space: nowrap;">No</th>
                                 <th style="white-space: nowrap;">Customer</th>
                                 <th style="white-space: nowrap;">Merk</th>
                                 <th style="white-space: nowrap;">Tanggal Pinjam</th>
