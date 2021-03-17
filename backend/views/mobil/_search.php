@@ -25,6 +25,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'tahun') ?>
 
+    <?= $form->field($model, 'harga_sewa') ?>
+
     <?php // echo $form->field($model, 'status') ?>
 
     <div class="form-group">

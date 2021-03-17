@@ -219,5 +219,13 @@ class TransaksiController extends Controller
         // Output the result as a file on the server. You can change output file
         $OpenTBS->Show(OPENTBS_DOWNLOAD, 'data_transaksi.xlsx'); // Also merges all [onshow] automatic fields.          
         exit;
-    } 
+    }
+      public function actionPrint($id)
+    {
+        $model = $this->findModel($id);
+        return $this->renderPartial('print', [
+            
+            'model' => $model,
+        ]);
+    }
 }

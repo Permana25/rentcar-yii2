@@ -25,7 +25,17 @@ use yii\helpers\ArrayHelper;
                         <?= $form->field($model, 'warna')->textInput(['maxlength' => true]) ?>
                     </div>
                     <div class="col-md-6">
-                        <?= $form->field($model, 'tahun')->textInput() ?>                                                                                     
+                        <?= $form->field($model, 'tahun')->textInput() ?>
+
+                        <?= $form->field($model, 'harga_sewa')->widget(
+                        \yii\widgets\MaskedInput::className(),
+                        [
+                            'clientOptions' => ['alias' => 'decimal', 'groupSeparator' => '.', 'autoGroup' => true, 'removeMaskOnSubmit' => true, 'rightAlign' => false, 'min' => 0],
+                            'options' => []
+                        ]
+                            ); 
+                        ?>
+
                         <?= $form->field($model, 'status')->dropDownList(array(1 => "Pesan", 2 => "Sudah dipesan"),['prompt' => 'Masukan Status']) ?>
 
                         <?= $form->field($model, 'foto')->fileInput(['maxlength' => true]) ?>

@@ -106,7 +106,7 @@ use yii\widgets\MaskedInput;
                 </div>
             </div>
                 <div class="form-group">
-                     <?= Html::a('<span class="glyphicon glyphicon-circle-arrow-left"></span> Kembali', ['index'], ['class' => 'btn btn-warning btn btn-sm']) ?>
+                    <?= Html::a('<span class="glyphicon glyphicon-circle-arrow-left"></span> Kembali', ['index'], ['class' => 'btn btn-warning btn btn-sm']) ?>
                     <?= Html::submitButton('<span class="glyphicon glyphicon-floppy-saved"></span> Simpan', ['class' => 'btn btn-success btn btn-sm']) ?>
                 </div>
                 <?php ActiveForm::end(); ?>

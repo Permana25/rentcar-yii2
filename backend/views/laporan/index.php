@@ -5,6 +5,7 @@ use backend\models\Transaksi;
 use backend\models\Mobil;
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\helpers\Url;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\TransaksiSearch */
@@ -59,14 +60,14 @@ $this->title = 'Laporan Transaksi';
                                     if ($tanggal_awal != 0 && $tanggal_akhir != 0) {
                                         # code...
                                     ?>
-                                        <button class="btn btn-info" onclick="print()">Print</button>
-                                        <?php //Html::a('Export Laporan', ['export-excel-laporan-pembelian', 'tanggal_awal' => $tanggal_awal, 'tanggal_akhir' => $tanggal_akhir], ['class' => 'btn btn-primary', 'target' => '_blank', 'method' => 'post']) 
-                                        ?>
+                                        <!-- <button class="btn btn-primary" onclick="print()">Print</button> -->
+                                        <?= Html::a('<span class="glyphicon glyphicon-print">Print</span>', ['print-transaksi', 'id' => $model->customer], ['class' => 'btn btn-primary', 'target' => '_blank']) ;
+                                        ?> 
                                     <?php
                                     }
                                     ?>
                                 </div>
-                            </td>
+                            </td>   
                         </tr>
                     </table>
 

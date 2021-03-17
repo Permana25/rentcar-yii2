@@ -39,6 +39,14 @@ $this->title = 'DETAIL MOBIL';
                         'warna',
                         'tahun',
                         [
+                            'attribute' => 'Harga Sewa',
+                            'label' => 'Harga',
+                            'value' => function ($model) {
+                              return 'Rp. ' . ribuan($model->harga_sewa);
+                            }
+                        ],
+
+                        [
                             'attribute' => 'status',
                             'format'    => 'raw',
                             'filter'    => array(1=>"Pesan", 2=>"Sudah dipesan"),

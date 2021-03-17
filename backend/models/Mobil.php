@@ -33,7 +33,7 @@ class Mobil extends \yii\db\ActiveRecord
     {
         return [
             [['merk', 'no_plat', 'warna', 'tahun', 'status', 'jenis'], 'required'],
-            [['tahun'], 'integer'],
+            [['tahun', 'harga_sewa'], 'integer'],
             [['foto'], 'safe'],
             [['merk', 'no_plat', 'warna', 'status'], 'string', 'max' => 255],
         ];
@@ -52,7 +52,8 @@ class Mobil extends \yii\db\ActiveRecord
             'tahun' => 'Tahun',
             'status' => 'Status',
             'foto' => 'Foto',
-            'jenis' => 'Jenis Mobil'
+            'jenis' => 'Jenis Mobil',
+            'harga_sewa' => 'Harga Sewa',
         ];
     }
 

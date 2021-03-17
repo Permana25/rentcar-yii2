@@ -36,6 +36,7 @@ $this->title = 'Mobil';
                                 <th style="white-space: nowrap;">Nomer Plat</th>
                                 <th style="white-space: nowrap;">Warna</th>
                                 <th style="white-space: nowrap;">Tahun</th>
+                                <th style="white-space: nowrap;">Harga Sewa</th>
                                 <th style="white-space: nowrap;">Status</th>
                                 <th style="white-space: nowrap;">Aksi</th>
                             </tr>
@@ -51,6 +52,7 @@ $this->title = 'Mobil';
                                     <td style="text-transform: uppercase;"><?= $value->no_plat ?></td>
                                     <td style="text-transform: uppercase;"><?= $value->warna ?></td>
                                     <td style="text-transform: uppercase;"><?= $value->tahun ?></td>
+                                    <td style="text-transform: uppercase;"><?= $value->harga_sewa ?></td>
                                     <td>
                                         <?php if ($value->status == 1) {
                                             echo '<label class="label label-success">Pesan</label>';

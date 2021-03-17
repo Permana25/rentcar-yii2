@@ -17,7 +17,7 @@ class MobilSearch extends Mobil
     public function rules()
     {
         return [
-            [['id_mobil', 'tahun'], 'integer'],
+            [['id_mobil', 'tahun', 'harga_sewa'], 'integer'],
             [['merk', 'no_plat', 'warna', 'status','foto'], 'safe'],
         ];
     }
@@ -66,8 +66,8 @@ class MobilSearch extends Mobil
             ->andFilterWhere(['like', 'no_plat', $this->no_plat])
             ->andFilterWhere(['like', 'warna', $this->warna])
             ->andFilterWhere(['like', 'status', $this->status])
-            ->andFilterWhere(['like', 'foto', $this->foto]);
-
+            ->andFilterWhere(['like', 'foto', $this->foto])
+            ->andFilterWhere(['like', 'harga_sewa', $this->harga_sewa]);
         return $dataProvider;
     }
 }
