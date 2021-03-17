@@ -65,7 +65,7 @@ class TransaksiSearch extends Transaksi
             'id_mobil' => $this->id_mobil,
             'tgl_pinjam' => $this->tgl_pinjam,
             'tgl_kembali' => $this->tgl_kembali,
-            'harga' => $this->harga,
+            'harga' => $this->harga_sewa,
             'denda' => $this->denda,
             'tanggal' => $this->tanggal,
             'status' => $this->status,

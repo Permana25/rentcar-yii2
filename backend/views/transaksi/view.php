@@ -75,7 +75,7 @@ $this->title = 'DETAIL TRANSAKSI ' ;
                             'attribute' => 'harga',
                             'label' => 'Harga',
                             'value' => function ($model) {
-                              return 'Rp. ' . ribuan($model->harga);
+                              return 'Rp. ' . ribuan($model->mobil->harga_sewa);
                             }
                         ],
                         [

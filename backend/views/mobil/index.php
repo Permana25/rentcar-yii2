@@ -52,7 +52,7 @@ $this->title = 'Mobil';
                                     <td style="text-transform: uppercase;"><?= $value->no_plat ?></td>
                                     <td style="text-transform: uppercase;"><?= $value->warna ?></td>
                                     <td style="text-transform: uppercase;"><?= $value->tahun ?></td>
-                                    <td style="text-transform: uppercase;"><?= $value->harga_sewa ?></td>
+                                    <td style="text-transform: uppercase;"><?= 'Rp. ' . ribuan ($value->harga_sewa) ?></td>
                                     <td>
                                         <?php if ($value->status == 1) {
                                             echo '<label class="label label-success">Pesan</label>';

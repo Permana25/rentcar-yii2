@@ -33,16 +33,25 @@ use yii\widgets\MaskedInput;
                     
                     ?>
 
-                      <?= $form->field($model, 'id_mobil')->widget(Select2::classname(), [
+                    <?= $form->field($model, 'id_mobil')->widget(Select2::classname(), [
                     'data' => $data_mobil,
                     'language' => 'en',
                     'options' => ['placeholder' => 'mobil'],
                     'pluginOptions' => [
                     'allowClear' => true
-                        ],
+                            ],
                                     
-                    ])->label('mobil')
+                        ])->label('mobil')
                     ?>
+
+                   <!--  <?= $form->field($model, 'harga')->widget(
+                        \yii\widgets\MaskedInput::className(),
+                        [
+                            'clientOptions' => ['alias' => 'decimal', 'groupSeparator' => '.', 'autoGroup' => true, 'removeMaskOnSubmit' => true, 'rightAlign' => false, 'min' => 0],
+                            'options' => []
+                        ]
+                            ); 
+                    ?> -->
 
                     <?=
                     $form->field($model, 'tgl_pinjam')->widget(DatePicker::classname(), [
@@ -56,7 +65,11 @@ use yii\widgets\MaskedInput;
                     ]);
                     ?>
 
-                    <?=
+                   
+
+                    <?= $form->field($model, 'jam_pinjam')->widget(TimePicker::classname()); ?>
+
+                     <?=
                     $form->field($model, 'tgl_kembali')->widget(DatePicker::classname(), [
                         'options' => ['placeholder' => 'Masukan Tanggal dan Waktu'],
                         'pluginOptions' => [
@@ -67,19 +80,20 @@ use yii\widgets\MaskedInput;
                         ]
                     ]);
                     ?>
-
-                    <?= $form->field($model, 'jam_pinjam')->widget(TimePicker::classname()); ?>
                 </div>
                 <div class="col-md-6">
-                    <?= $form->field($model, 'jam_kembali')->widget(TimePicker::classname()); ?>
+                   
+                     <?= $form->field($model, 'jam_kembali')->widget(TimePicker::classname()); ?>
 
-                    <?= $form->field($model, 'harga')->widget(
+
+                    <!-- <?= $form->field($model, 'harga')->widget(
                         \yii\widgets\MaskedInput::className(),
                         [
                             'clientOptions' => ['alias' => 'decimal', 'groupSeparator' => '.', 'autoGroup' => true, 'removeMaskOnSubmit' => true, 'rightAlign' => false, 'min' => 0],
                             'options' => []
                         ]
-                    ); ?>
+                            ); 
+                    ?>  -->
 
                     <?= $form->field($model, 'denda')->widget(
                         \yii\widgets\MaskedInput::className(),

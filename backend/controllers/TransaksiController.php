@@ -71,7 +71,9 @@ class TransaksiController extends Controller
         $model = new Transaksi();
         $data_mobil = ArrayHelper::map(
             Mobil::find()->where(['status'=>1])->all(),
-            'id_mobil','merk'
+            'id_mobil', function($mobil){
+                return $mobil['merk'] . ' ' . $mobil['harga_sewa'];
+            }
         );
         $customer=new Customer();
         $data_customer = ArrayHelper::map(
@@ -84,11 +86,12 @@ class TransaksiController extends Controller
         if ($model->load(Yii::$app->request->post()))
          { 
 
-            
+            // $mobil = Mobil::findOne($model->id_mobil);
            $mobil= Mobil::find()->where(['id_mobil'=>$model->id_mobil])->one();  
            $mobil->status=2;
-           $model->total=$model->harga+$model->denda;
            $mobil->save(false);
+           $model->harga= $mobil->harga_sewa;
+           $model->total=$model->harga+$model->denda;
            $model->save();
             Yii::$app->session->setFlash('success', 'Disimpan');
            return $this->redirect(['view', 'id' => $model->id_transaksi]);
