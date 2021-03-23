@@ -82,7 +82,7 @@ use yii\widgets\MaskedInput;
                     ?>
                 </div>
                 <div class="col-md-6">
-                   
+        
                      <?= $form->field($model, 'jam_kembali')->widget(TimePicker::classname()); ?>
 
 
@@ -95,13 +95,13 @@ use yii\widgets\MaskedInput;
                             ); 
                     ?>  -->
 
-                    <?= $form->field($model, 'denda')->widget(
+                    <!-- <?= $form->field($model, 'denda')->widget(
                         \yii\widgets\MaskedInput::className(),
                         [
                             'clientOptions' => ['alias' => 'decimal', 'groupSeparator' => '.', 'autoGroup' => true, 'removeMaskOnSubmit' => true, 'rightAlign' => false, 'min' => 0],
                             'options' => []
                         ]
-                    ); ?>
+                    ); ?> -->
 
                     <?= $form->field($model, 'tanggal')->widget(DatePicker::classname(), [
                         'options' => ['placeholder' => 'Masukan Tanggal'],
@@ -116,7 +116,7 @@ use yii\widgets\MaskedInput;
 
                     <?= $form->field($model, 'status')->dropDownList(array(1 => "Lunas", 2 => "Belum Lunas"),['prompt' => 'Masukan Status']) ?>
 
-
+                    <?= $form->field($model, 'catatan')->textArea(['maxlength' => true,'rows'=>4]) ?>
                 </div>
             </div>
                 <div class="form-group">

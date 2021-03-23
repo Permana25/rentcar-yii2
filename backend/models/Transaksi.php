@@ -33,7 +33,7 @@ class Transaksi extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id_customer', 'id_mobil', 'tgl_pinjam', 'jam_pinjam', 'tgl_kembali','jam_kembali', 'harga', 'denda', 'tanggal', 'status'], 'required'],
+            [['id_customer', 'id_mobil', 'tgl_pinjam', 'jam_pinjam', 'tgl_kembali','jam_kembali', 'harga', 'denda', 'tanggal', 'status','catatan'], 'required'],
             [['id_customer', 'id_mobil', 'harga', 'denda', 'status', 'total'], 'integer'],
             [['tgl_pinjam', 'tgl_kembali', 'tanggal','jam_pinjam', 'jam_kembali'], 'safe'],
         ];
@@ -57,6 +57,7 @@ class Transaksi extends \yii\db\ActiveRecord
             'tanggal' => 'Tanggal',
             'status' => 'Status',
             'total' => 'Total',
+            'catatan' => 'Catatan',
         ];
         }
         public function getmobil()

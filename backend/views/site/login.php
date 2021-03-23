@@ -161,8 +161,8 @@ $fieldOptions2 = [
                             <div class="col-md-1"></div>
                                 <div class="col-md-10" style="margin-top: 0px; margin-bottom: 10px; color: black;">
                                     <p>SELAMAT DATANG</p>
-                                        <h2 style="color: black; margin-top: 10px;" class="gss"><b>G S S RENTAL</b> 
-                                            <img src="upload/logo1.png" width="80px"><br><br></h2>
+                                        <h2 style="color: black; margin-top: 10px;" class="gss"><b>GSS RENTAL MOBIL</b> 
+                                            <!-- <img src="upload/logo1.png" width="80px"> --><br><br></h2>
 
                                     <?php $form = ActiveForm::begin(['id' => 'login-form', 'enableClientValidation' => false]); ?>
                                             <div class="form-group has-feedback pass field-loginform-username required">

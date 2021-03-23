@@ -78,13 +78,13 @@ $this->title = 'DETAIL TRANSAKSI ' ;
                               return 'Rp. ' . ribuan($model->mobil->harga_sewa);
                             }
                         ],
-                        [
-                            'attribute' => 'denda',
-                            'label' => 'denda',
-                            'value' => function ($model) {
-                              return 'Rp.' . ribuan($model->denda);
-                            }
-                        ],
+                        // [
+                        //     'attribute' => 'denda',
+                        //     'label' => 'denda',
+                        //     'value' => function ($model) {
+                        //       return 'Rp.' . ribuan($model->denda);
+                        //     }
+                        // ],
 
                         [
                             'attribute' => 'tanggal',
@@ -131,6 +131,7 @@ $this->title = 'DETAIL TRANSAKSI ' ;
                                 return "<img src='upload/$foto' width='150'>"; 
                             }
                         ],
+                        'catatan',
                     ],
                 ]) ?>
             </div>

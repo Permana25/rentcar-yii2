@@ -19,7 +19,7 @@ dmstr\web\AdminLteAsset::register($this);
     <?php $this->head() ?>
     <style type="text/css">
         .login-page {
-            background-image: url('upload/logo8.jpg');
+            /*background-image: url('upload/logo8.jpg');*/
             background-size: cover;
         }
     </style>

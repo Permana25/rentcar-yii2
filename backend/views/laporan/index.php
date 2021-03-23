@@ -60,9 +60,9 @@ $this->title = 'Laporan Transaksi';
                                     if ($tanggal_awal != 0 && $tanggal_akhir != 0) {
                                         # code...
                                     ?>
-                                        <!-- <button class="btn btn-primary" onclick="print()">Print</button> -->
-                                        <?= Html::a('<span class="glyphicon glyphicon-print">Print</span>', ['print-transaksi', 'id' => $model->customer], ['class' => 'btn btn-primary', 'target' => '_blank']) ;
-                                        ?> 
+                                       <button class="btn btn-primary" onclick="print()">Print</button>
+                                       <!-- <?= Html::a('<span class="glyphicon glyphicon-print">Print</span>', ['print', 'id' => $model->customer], ['class' => 'btn btn-primary', 'target' => '_blank']) ;
+                                        ?>  -->
                                     <?php
                                     }
                                     ?>
@@ -134,7 +134,9 @@ $this->title = 'Laporan Transaksi';
                                             <td></td>
                                             <td></td>
                                             <td>
+                                                <b>
                                              <p class="float-right">Rp. <?= ribuan($grandtotal) ?></p>
+                                                <b>
                                             </td>
                                         </tr>
                                         </tbody>

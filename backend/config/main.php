@@ -77,7 +77,7 @@ function mysql2phpdatelong($date)
 
 return [
     'id' => 'app-backend',
-    'name' => 'GSS RENTAL',
+    'name' => 'GSS RENTAL MOBIL',
     'timeZone' => 'Asia/Jakarta',
     //'language' => 'id',
     'basePath' => dirname(__DIR__),
